@@ -1,0 +1,3 @@
+is_global = true
+build_property.RootNamespace = Pedido.Domain
+build_property.ProjectDir = D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\RabbitMQ\

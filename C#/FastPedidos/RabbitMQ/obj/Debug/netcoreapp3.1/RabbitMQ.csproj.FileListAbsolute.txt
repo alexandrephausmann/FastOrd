@@ -1,0 +1,17 @@
+D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\FastPedidos\RabbitMQ\bin\Debug\netcoreapp3.1\RabbitMQ.exe
+D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\FastPedidos\RabbitMQ\bin\Debug\netcoreapp3.1\RabbitMQ.deps.json
+D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\FastPedidos\RabbitMQ\bin\Debug\netcoreapp3.1\RabbitMQ.runtimeconfig.json
+D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\FastPedidos\RabbitMQ\bin\Debug\netcoreapp3.1\RabbitMQ.runtimeconfig.dev.json
+D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\FastPedidos\RabbitMQ\bin\Debug\netcoreapp3.1\RabbitMQ.dll
+D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\FastPedidos\RabbitMQ\bin\Debug\netcoreapp3.1\RabbitMQ.pdb
+D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\FastPedidos\RabbitMQ\bin\Debug\netcoreapp3.1\RabbitMQ.Client.dll
+D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\FastPedidos\RabbitMQ\bin\Debug\netcoreapp3.1\System.Threading.Channels.dll
+D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\FastPedidos\RabbitMQ\obj\Debug\netcoreapp3.1\RabbitMQ.csproj.AssemblyReference.cache
+D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\FastPedidos\RabbitMQ\obj\Debug\netcoreapp3.1\RabbitMQ.GeneratedMSBuildEditorConfig.editorconfig
+D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\FastPedidos\RabbitMQ\obj\Debug\netcoreapp3.1\RabbitMQ.AssemblyInfoInputs.cache
+D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\FastPedidos\RabbitMQ\obj\Debug\netcoreapp3.1\RabbitMQ.AssemblyInfo.cs
+D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\FastPedidos\RabbitMQ\obj\Debug\netcoreapp3.1\RabbitMQ.csproj.CoreCompileInputs.cache
+D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\FastPedidos\RabbitMQ\obj\Debug\netcoreapp3.1\RabbitMQ.csproj.CopyComplete
+D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\FastPedidos\RabbitMQ\obj\Debug\netcoreapp3.1\RabbitMQ.dll
+D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\FastPedidos\RabbitMQ\obj\Debug\netcoreapp3.1\RabbitMQ.pdb
+D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\FastPedidos\RabbitMQ\obj\Debug\netcoreapp3.1\RabbitMQ.genruntimeconfig.cache

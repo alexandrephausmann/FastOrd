@@ -1,0 +1,10 @@
+D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\RabbitMQ\bin\Debug\netcoreapp3.1\Pedidos.Domain.deps.json
+D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\RabbitMQ\bin\Debug\netcoreapp3.1\Pedidos.Domain.dll
+D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\RabbitMQ\bin\Debug\netcoreapp3.1\Pedidos.Domain.pdb
+D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\RabbitMQ\obj\Debug\netcoreapp3.1\Pedidos.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\RabbitMQ\obj\Debug\netcoreapp3.1\Pedidos.Domain.AssemblyInfoInputs.cache
+D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\RabbitMQ\obj\Debug\netcoreapp3.1\Pedidos.Domain.AssemblyInfo.cs
+D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\RabbitMQ\obj\Debug\netcoreapp3.1\Pedidos.Domain.csproj.CoreCompileInputs.cache
+D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\RabbitMQ\obj\Debug\netcoreapp3.1\Pedidos.Domain.dll
+D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\RabbitMQ\obj\Debug\netcoreapp3.1\Pedidos.Domain.pdb
+D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\RabbitMQ\obj\Debug\netcoreapp3.1\Pedidos.Domain.csproj.AssemblyReference.cache
