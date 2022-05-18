@@ -4,7 +4,7 @@ using Pedidos.UseCase.Interfaces;
 using Pedidos.Domain.Entidades;
 using RabbitMQ.Request;
 
-namespace FastPedidos.Controllers
+namespace Pedidos.Controllers
 {
     [ApiController]
     [Route("[controller]")]
@@ -23,15 +23,15 @@ namespace FastPedidos.Controllers
         [HttpPost]
         public IActionResult GerarPedido([FromBody]PedidoRequest pedidoRequest)
         {
-            var pedido = new Pedido()
+            var pedidoIn = new PedidoIn()
             {
-                CodPedido = pedidoRequest.CodPedido,
-                CodIntegracao = pedidoRequest.CodIntegracao
+                Pedido = pedidoRequest.Pedido,
+                ItensPedido = pedidoRequest.ItensPedido
             };
 
-            _enviarPedidoUseCase.SendMessage(pedido);
+            _enviarPedidoUseCase.SendMessage(pedidoIn);
 
-            return Ok(new { id = pedido.CodIntegracao });
+            return Ok(new { pedido = pedidoIn.Pedido.CodPedido });
         }
     }
 }

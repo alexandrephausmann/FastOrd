@@ -1,0 +1,10 @@
+D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\Pedido.UseCase\bin\Debug\netcoreapp3.1\Pedidos.UseCase.deps.json
+D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\Pedido.UseCase\bin\Debug\netcoreapp3.1\Pedidos.UseCase.dll
+D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\Pedido.UseCase\bin\Debug\netcoreapp3.1\Pedidos.UseCase.pdb
+D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\Pedido.UseCase\obj\Debug\netcoreapp3.1\Pedidos.UseCase.csproj.AssemblyReference.cache
+D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\Pedido.UseCase\obj\Debug\netcoreapp3.1\Pedidos.UseCase.GeneratedMSBuildEditorConfig.editorconfig
+D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\Pedido.UseCase\obj\Debug\netcoreapp3.1\Pedidos.UseCase.AssemblyInfoInputs.cache
+D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\Pedido.UseCase\obj\Debug\netcoreapp3.1\Pedidos.UseCase.AssemblyInfo.cs
+D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\Pedido.UseCase\obj\Debug\netcoreapp3.1\Pedidos.UseCase.csproj.CoreCompileInputs.cache
+D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\Pedido.UseCase\obj\Debug\netcoreapp3.1\Pedidos.UseCase.dll
+D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\Pedido.UseCase\obj\Debug\netcoreapp3.1\Pedidos.UseCase.pdb

@@ -111,9 +111,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Dados\\Documentos\\Alexandre\\Projeto FastOrd\\FastOrd\\C#\\Pedidos\\Pedido.UseCase\\Pedido.UseCase.csproj",
+      "projectUniqueName": "D:\\Dados\\Documentos\\Alexandre\\Projeto FastOrd\\FastOrd\\C#\\Pedidos\\Pedido.UseCase\\Pedidos.UseCase.csproj",
       "projectName": "Pedidos.UseCase",
-      "projectPath": "D:\\Dados\\Documentos\\Alexandre\\Projeto FastOrd\\FastOrd\\C#\\Pedidos\\Pedido.UseCase\\Pedido.UseCase.csproj",
+      "projectPath": "D:\\Dados\\Documentos\\Alexandre\\Projeto FastOrd\\FastOrd\\C#\\Pedidos\\Pedido.UseCase\\Pedidos.UseCase.csproj",
       "packagesPath": "C:\\Users\\Alexandre\\.nuget\\packages\\",
       "outputPath": "D:\\Dados\\Documentos\\Alexandre\\Projeto FastOrd\\FastOrd\\C#\\Pedidos\\Pedido.UseCase\\obj\\",
       "projectStyle": "PackageReference",

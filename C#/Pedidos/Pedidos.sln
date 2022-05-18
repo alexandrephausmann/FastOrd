@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31605.320
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pedidos", "Pedidos\Pedidos.csproj", "{9697E0A4-2CCF-4DAC-8AC7-89BF7B405B92}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pedidos", "Pedidos\Pedidos.csproj", "{9697E0A4-2CCF-4DAC-8AC7-89BF7B405B92}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pedido.Domain", "RabbitMQ\Pedido.Domain.csproj", "{4BC240EF-4E93-4EA5-A098-85957D15C7E5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pedidos.Domain", "RabbitMQ\Pedidos.Domain.csproj", "{4BC240EF-4E93-4EA5-A098-85957D15C7E5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{946A1928-C27D-45AB-88BD-CF01D4A5F977}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Gateway", "Gateway", "{667F2533-818B-4972-8D64-1407B9A7AF2F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pedido.UseCase", "Pedido.UseCase\Pedido.UseCase.csproj", "{969126CC-E06C-4A04-BD69-08E762F1A91B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pedidos.UseCase", "Pedido.UseCase\Pedidos.UseCase.csproj", "{969126CC-E06C-4A04-BD69-08E762F1A91B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

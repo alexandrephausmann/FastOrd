@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace RabbitMQ.Request
 {
-    public class PedidoRequest
+    public class PedidoIn
     {
         public Pedido Pedido { get; set; }
         public List<ItemPedido> ItensPedido { get; set; }

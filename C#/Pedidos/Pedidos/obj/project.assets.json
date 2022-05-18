@@ -323,13 +323,13 @@
     },
     "Pedidos.Domain/1.0.0": {
       "type": "project",
-      "path": "../RabbitMQ/Pedido.Domain.csproj",
-      "msbuildProject": "../RabbitMQ/Pedido.Domain.csproj"
+      "path": "../RabbitMQ/Pedidos.Domain.csproj",
+      "msbuildProject": "../RabbitMQ/Pedidos.Domain.csproj"
     },
     "Pedidos.UseCase/1.0.0": {
       "type": "project",
-      "path": "../Pedido.UseCase/Pedido.UseCase.csproj",
-      "msbuildProject": "../Pedido.UseCase/Pedido.UseCase.csproj"
+      "path": "../Pedido.UseCase/Pedidos.UseCase.csproj",
+      "msbuildProject": "../Pedido.UseCase/Pedidos.UseCase.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -366,11 +366,11 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "D:\\Dados\\Documentos\\Alexandre\\Projeto FastOrd\\FastOrd\\C#\\Pedidos\\Pedido.UseCase\\Pedido.UseCase.csproj": {
-              "projectPath": "D:\\Dados\\Documentos\\Alexandre\\Projeto FastOrd\\FastOrd\\C#\\Pedidos\\Pedido.UseCase\\Pedido.UseCase.csproj"
+            "D:\\Dados\\Documentos\\Alexandre\\Projeto FastOrd\\FastOrd\\C#\\Pedidos\\Pedido.UseCase\\Pedidos.UseCase.csproj": {
+              "projectPath": "D:\\Dados\\Documentos\\Alexandre\\Projeto FastOrd\\FastOrd\\C#\\Pedidos\\Pedido.UseCase\\Pedidos.UseCase.csproj"
             },
-            "D:\\Dados\\Documentos\\Alexandre\\Projeto FastOrd\\FastOrd\\C#\\Pedidos\\RabbitMQ\\Pedido.Domain.csproj": {
-              "projectPath": "D:\\Dados\\Documentos\\Alexandre\\Projeto FastOrd\\FastOrd\\C#\\Pedidos\\RabbitMQ\\Pedido.Domain.csproj"
+            "D:\\Dados\\Documentos\\Alexandre\\Projeto FastOrd\\FastOrd\\C#\\Pedidos\\RabbitMQ\\Pedidos.Domain.csproj": {
+              "projectPath": "D:\\Dados\\Documentos\\Alexandre\\Projeto FastOrd\\FastOrd\\C#\\Pedidos\\RabbitMQ\\Pedidos.Domain.csproj"
             }
           }
         }

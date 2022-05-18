@@ -11,12 +11,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("Pedidos.Domain")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("Pedidos.UseCase")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
-[assembly: System.Reflection.AssemblyProductAttribute("Pedidos.Domain")]
-[assembly: System.Reflection.AssemblyTitleAttribute("Pedidos.Domain")]
+[assembly: System.Reflection.AssemblyProductAttribute("Pedidos.UseCase")]
+[assembly: System.Reflection.AssemblyTitleAttribute("Pedidos.UseCase")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // Gerado pela classe WriteCodeFragment do MSBuild.

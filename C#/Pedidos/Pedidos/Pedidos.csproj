@@ -13,8 +13,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Pedido.UseCase\Pedido.UseCase.csproj" />
-    <ProjectReference Include="..\RabbitMQ\Pedido.Domain.csproj" />
+    <ProjectReference Include="..\Pedido.UseCase\Pedidos.UseCase.csproj" />
+    <ProjectReference Include="..\RabbitMQ\Pedidos.Domain.csproj" />
   </ItemGroup>
 
 

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Dados\\Documentos\\Alexandre\\Projeto FastOrd\\FastOrd\\C#\\Pedidos\\RabbitMQ\\Pedidos.Domain.csproj": {}
+    "D:\\Dados\\Documentos\\Alexandre\\Projeto FastOrd\\FastOrd\\C#\\Pedidos\\Pedido.UseCase\\Pedidos.UseCase.csproj": {}
   },
   "projects": {
-    "D:\\Dados\\Documentos\\Alexandre\\Projeto FastOrd\\FastOrd\\C#\\Pedidos\\RabbitMQ\\Pedidos.Domain.csproj": {
+    "D:\\Dados\\Documentos\\Alexandre\\Projeto FastOrd\\FastOrd\\C#\\Pedidos\\Pedido.UseCase\\Pedidos.UseCase.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Dados\\Documentos\\Alexandre\\Projeto FastOrd\\FastOrd\\C#\\Pedidos\\RabbitMQ\\Pedidos.Domain.csproj",
-        "projectName": "Pedidos.Domain",
-        "projectPath": "D:\\Dados\\Documentos\\Alexandre\\Projeto FastOrd\\FastOrd\\C#\\Pedidos\\RabbitMQ\\Pedidos.Domain.csproj",
+        "projectUniqueName": "D:\\Dados\\Documentos\\Alexandre\\Projeto FastOrd\\FastOrd\\C#\\Pedidos\\Pedido.UseCase\\Pedidos.UseCase.csproj",
+        "projectName": "Pedidos.UseCase",
+        "projectPath": "D:\\Dados\\Documentos\\Alexandre\\Projeto FastOrd\\FastOrd\\C#\\Pedidos\\Pedido.UseCase\\Pedidos.UseCase.csproj",
         "packagesPath": "C:\\Users\\Alexandre\\.nuget\\packages\\",
-        "outputPath": "D:\\Dados\\Documentos\\Alexandre\\Projeto FastOrd\\FastOrd\\C#\\Pedidos\\RabbitMQ\\obj\\",
+        "outputPath": "D:\\Dados\\Documentos\\Alexandre\\Projeto FastOrd\\FastOrd\\C#\\Pedidos\\Pedido.UseCase\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Alexandre\\AppData\\Roaming\\NuGet\\NuGet.Config",

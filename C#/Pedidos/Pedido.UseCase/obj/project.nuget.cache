@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "YsXuKy1NPOOc4OU+98B2Bwfk3YDQjJGpBVut9oT9deqy5hmomV23mJsjKcTJ+Akg8M7msWREcdWwCQlA8AY20A==",
+  "dgSpecHash": "+2lav/NRDd+GhvSE4Lqtc2LLDciMHqQ4dZa33SIDY7A5GiUc6UI8b8EFtA/x/xOaC9IuZ52v5ARxYs0Y+zlAnQ==",
   "success": true,
-  "projectFilePath": "D:\\Dados\\Documentos\\Alexandre\\Projeto FastOrd\\FastOrd\\C#\\Pedidos\\Pedido.UseCase\\Pedido.UseCase.csproj",
+  "projectFilePath": "D:\\Dados\\Documentos\\Alexandre\\Projeto FastOrd\\FastOrd\\C#\\Pedidos\\Pedido.UseCase\\Pedidos.UseCase.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Alexandre\\.nuget\\packages\\rabbitmq.client\\6.3.0\\rabbitmq.client.6.3.0.nupkg.sha512",
     "C:\\Users\\Alexandre\\.nuget\\packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",

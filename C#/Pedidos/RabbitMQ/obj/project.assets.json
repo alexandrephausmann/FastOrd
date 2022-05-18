@@ -111,9 +111,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Dados\\Documentos\\Alexandre\\Projeto FastOrd\\FastOrd\\C#\\Pedidos\\RabbitMQ\\Pedido.Domain.csproj",
+      "projectUniqueName": "D:\\Dados\\Documentos\\Alexandre\\Projeto FastOrd\\FastOrd\\C#\\Pedidos\\RabbitMQ\\Pedidos.Domain.csproj",
       "projectName": "Pedidos.Domain",
-      "projectPath": "D:\\Dados\\Documentos\\Alexandre\\Projeto FastOrd\\FastOrd\\C#\\Pedidos\\RabbitMQ\\Pedido.Domain.csproj",
+      "projectPath": "D:\\Dados\\Documentos\\Alexandre\\Projeto FastOrd\\FastOrd\\C#\\Pedidos\\RabbitMQ\\Pedidos.Domain.csproj",
       "packagesPath": "C:\\Users\\Alexandre\\.nuget\\packages\\",
       "outputPath": "D:\\Dados\\Documentos\\Alexandre\\Projeto FastOrd\\FastOrd\\C#\\Pedidos\\RabbitMQ\\obj\\",
       "projectStyle": "PackageReference",

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "AU8I0Yu1yBY3UGfNrikH7XFNbM0+hcQAbnkzIsXVw9xXq+CI5Uzde7RhVYZfDUGT0Lq20OsVxzDzHSXUa8RiVQ==",
+  "dgSpecHash": "4Fw8btJXeG/2d3vzW7Og5oW1cANH9Xv6X89d78KkZr4+NBcUg4GiEDZOpO0sqHPm9+xQIwDPs2dp9EDrbUVOeQ==",
   "success": true,
-  "projectFilePath": "D:\\Dados\\Documentos\\Alexandre\\Projeto FastOrd\\FastOrd\\C#\\Pedidos\\RabbitMQ\\Pedido.Domain.csproj",
+  "projectFilePath": "D:\\Dados\\Documentos\\Alexandre\\Projeto FastOrd\\FastOrd\\C#\\Pedidos\\RabbitMQ\\Pedidos.Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Alexandre\\.nuget\\packages\\rabbitmq.client\\6.3.0\\rabbitmq.client.6.3.0.nupkg.sha512",
     "C:\\Users\\Alexandre\\.nuget\\packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",
