@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Pedidos.UseCase.Interfaces;
-using Pedidos.Domain.Entidades;
-using RabbitMQ.Request;
+using Pedidos.Models.Request;
+using Pedidos.Models.In;
 
 namespace Pedidos.Controllers
 {
@@ -28,10 +28,11 @@ namespace Pedidos.Controllers
                 Pedido = pedidoRequest.Pedido,
                 ItensPedido = pedidoRequest.ItensPedido
             };
+            var codigoPedido = _enviarPedidoUseCase.CriarPedido(pedidoIn.Pedido, pedidoIn.ItensPedido);
 
             _enviarPedidoUseCase.SendMessage(pedidoIn);
 
-            return Ok(new { pedido = pedidoIn.Pedido.CodPedido });
+            return Ok(new { pedido = codigoPedido });
         }
     }
 }

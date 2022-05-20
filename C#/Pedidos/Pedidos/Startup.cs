@@ -4,6 +4,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using Pedidos.Dados;
+using Pedidos.Dados.Interface;
 using Pedidos.UseCase;
 using Pedidos.UseCase.Interfaces;
 
@@ -23,6 +25,7 @@ namespace Pedidos
         {
             services.AddControllers();
             services.AddTransient<IEnviarPedidoUseCase, EnviarPedidoUseCase>();
+            services.AddTransient<IPedidoDAO, PedidoDAO>();
 
             services.AddSwaggerGen(c =>
             {

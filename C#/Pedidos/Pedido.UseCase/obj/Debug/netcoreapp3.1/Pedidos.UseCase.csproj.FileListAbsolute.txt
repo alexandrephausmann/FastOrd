@@ -8,3 +8,9 @@ D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\Pedido.UseCase\
 D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\Pedido.UseCase\obj\Debug\netcoreapp3.1\Pedidos.UseCase.csproj.CoreCompileInputs.cache
 D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\Pedido.UseCase\obj\Debug\netcoreapp3.1\Pedidos.UseCase.dll
 D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\Pedido.UseCase\obj\Debug\netcoreapp3.1\Pedidos.UseCase.pdb
+D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\Pedido.UseCase\bin\Debug\netcoreapp3.1\Pedidos.Dados.dll
+D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\Pedido.UseCase\bin\Debug\netcoreapp3.1\Pedidos.Domain.dll
+D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\Pedido.UseCase\bin\Debug\netcoreapp3.1\Pedidos.Dados.pdb
+D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\Pedido.UseCase\bin\Debug\netcoreapp3.1\Pedidos.Domain.pdb
+D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\Pedido.UseCase\obj\Debug\netcoreapp3.1\Pedidos.UseCase.csproj.CopyComplete
+D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\Pedido.UseCase\bin\Debug\netcoreapp3.1\appconfig.config

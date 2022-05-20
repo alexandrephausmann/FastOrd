@@ -5,10 +5,10 @@ namespace Pedidos.Domain.Entidades
     public class ItemPedido
     {
         [JsonIgnore]
-        public string CodPedido { get; set; }
+        public int CodPedido { get; set; }
         [JsonIgnore]
-        public string CodItemPedido { get; set; }
-        public string CodProduto { get; set; }
+        public int CodItemPedido { get; set; }
+        public int CodProduto { get; set; }
         public int Quantidade { get; set; }
     }
 }

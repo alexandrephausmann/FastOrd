@@ -1,7 +1,7 @@
 ﻿using Pedidos.Domain.Entidades;
 using System.Collections.Generic;
 
-namespace RabbitMQ.Request
+namespace Pedidos.Models.Request
 {
     public class PedidoRequest
     {

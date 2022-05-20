@@ -13,6 +13,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Gateway", "Gateway", "{667F
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pedidos.UseCase", "Pedido.UseCase\Pedidos.UseCase.csproj", "{969126CC-E06C-4A04-BD69-08E762F1A91B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pedidos.Dados", "Pedidos.Dados\Pedidos.Dados.csproj", "{E32FA001-900C-4364-9285-F00D443B9D29}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,10 @@ Global
 		{969126CC-E06C-4A04-BD69-08E762F1A91B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{969126CC-E06C-4A04-BD69-08E762F1A91B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{969126CC-E06C-4A04-BD69-08E762F1A91B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E32FA001-900C-4364-9285-F00D443B9D29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E32FA001-900C-4364-9285-F00D443B9D29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E32FA001-900C-4364-9285-F00D443B9D29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E32FA001-900C-4364-9285-F00D443B9D29}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -39,6 +45,7 @@ Global
 		{9697E0A4-2CCF-4DAC-8AC7-89BF7B405B92} = {667F2533-818B-4972-8D64-1407B9A7AF2F}
 		{4BC240EF-4E93-4EA5-A098-85957D15C7E5} = {946A1928-C27D-45AB-88BD-CF01D4A5F977}
 		{969126CC-E06C-4A04-BD69-08E762F1A91B} = {946A1928-C27D-45AB-88BD-CF01D4A5F977}
+		{E32FA001-900C-4364-9285-F00D443B9D29} = {946A1928-C27D-45AB-88BD-CF01D4A5F977}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4D4F6512-4044-4F0F-8420-5D9257694025}
