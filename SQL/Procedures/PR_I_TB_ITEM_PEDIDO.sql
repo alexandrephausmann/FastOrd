@@ -1,5 +1,12 @@
 USE FASTORDER
 GO
+-- Create a table type to match your input parameters
+CREATE TYPE ItensPedidos AS TABLE 
+( COD_PEDIDO INT 
+	,COD_ITEM_PEDIDO INT 
+	,COD_PRODUTO INT 
+	,QUANTIDADE INT  );
+GO
 
 IF EXISTS (SELECT 1 
 			FROM SYS.OBJECTS
@@ -11,10 +18,7 @@ GO
 
 CREATE PROC PR_I_TB_ITEM_PEDIDO
 (
-	 @COD_PEDIDO INT = NULL
-	,@COD_ITEM_PEDIDO INT = NULL
-	,@COD_PRODUTO INT = NULL
-	,@QUANTIDADE INT = NULL
+	 @Values ItensPedidos READONLY
 )
 
 AS
@@ -27,13 +31,10 @@ BEGIN
 				   COD_PRODUTO,
 				   QUANTIDADE
 			   )
-		 VALUES
-			   (
-				   @COD_PEDIDO,
-				   @COD_ITEM_PEDIDO,
-				   @COD_PRODUTO,
-				   @QUANTIDADE
-			   )
+		SELECT 
+             COD_PEDIDO, COD_ITEM_PEDIDO,COD_PRODUTO,QUANTIDADE
+          FROM
+             @Values
 
 	END
 GO

@@ -8,6 +8,7 @@ using Pedidos.Dados;
 using Pedidos.Dados.Interface;
 using Pedidos.UseCase;
 using Pedidos.UseCase.Interfaces;
+using System;
 
 namespace Pedidos
 {
@@ -26,6 +27,8 @@ namespace Pedidos
             services.AddControllers();
             services.AddTransient<IEnviarPedidoUseCase, EnviarPedidoUseCase>();
             services.AddTransient<IPedidoDAO, PedidoDAO>();
+
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
             services.AddSwaggerGen(c =>
             {

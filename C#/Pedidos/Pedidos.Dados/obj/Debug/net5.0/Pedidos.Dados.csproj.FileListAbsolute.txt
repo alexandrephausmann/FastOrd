@@ -1,0 +1,15 @@
+D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\Pedidos.Dados\bin\Debug\net5.0\Pedidos.Dados.deps.json
+D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\Pedidos.Dados\bin\Debug\net5.0\Pedidos.Dados.dll
+D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\Pedidos.Dados\bin\Debug\net5.0\ref\Pedidos.Dados.dll
+D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\Pedidos.Dados\bin\Debug\net5.0\Pedidos.Dados.pdb
+D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\Pedidos.Dados\bin\Debug\net5.0\Pedidos.Domain.dll
+D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\Pedidos.Dados\bin\Debug\net5.0\Pedidos.Domain.pdb
+D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\Pedidos.Dados\obj\Debug\net5.0\Pedidos.Dados.csproj.AssemblyReference.cache
+D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\Pedidos.Dados\obj\Debug\net5.0\Pedidos.Dados.GeneratedMSBuildEditorConfig.editorconfig
+D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\Pedidos.Dados\obj\Debug\net5.0\Pedidos.Dados.AssemblyInfoInputs.cache
+D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\Pedidos.Dados\obj\Debug\net5.0\Pedidos.Dados.AssemblyInfo.cs
+D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\Pedidos.Dados\obj\Debug\net5.0\Pedidos.Dados.csproj.CoreCompileInputs.cache
+D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\Pedidos.Dados\obj\Debug\net5.0\Pedidos.Dados.csproj.CopyComplete
+D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\Pedidos.Dados\obj\Debug\net5.0\Pedidos.Dados.dll
+D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\Pedidos.Dados\obj\Debug\net5.0\ref\Pedidos.Dados.dll
+D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\Pedidos.Dados\obj\Debug\net5.0\Pedidos.Dados.pdb

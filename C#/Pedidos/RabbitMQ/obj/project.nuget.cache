@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "4Fw8btJXeG/2d3vzW7Og5oW1cANH9Xv6X89d78KkZr4+NBcUg4GiEDZOpO0sqHPm9+xQIwDPs2dp9EDrbUVOeQ==",
+  "dgSpecHash": "YWIPNivzqiJpEWD4zb1YCVoPIrzG6KgXU5GDkG3YLswspjOiymirNuHzHFNrnDOoUEOfBOWrTLim/sM7De8kqQ==",
   "success": true,
   "projectFilePath": "D:\\Dados\\Documentos\\Alexandre\\Projeto FastOrd\\FastOrd\\C#\\Pedidos\\RabbitMQ\\Pedidos.Domain.csproj",
   "expectedPackageFiles": [

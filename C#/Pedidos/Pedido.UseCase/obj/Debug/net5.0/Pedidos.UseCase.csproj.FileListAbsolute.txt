@@ -1,0 +1,17 @@
+D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\Pedido.UseCase\bin\Debug\net5.0\Pedidos.UseCase.deps.json
+D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\Pedido.UseCase\bin\Debug\net5.0\Pedidos.UseCase.dll
+D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\Pedido.UseCase\bin\Debug\net5.0\ref\Pedidos.UseCase.dll
+D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\Pedido.UseCase\bin\Debug\net5.0\Pedidos.UseCase.pdb
+D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\Pedido.UseCase\bin\Debug\net5.0\Pedidos.Dados.dll
+D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\Pedido.UseCase\bin\Debug\net5.0\Pedidos.Domain.dll
+D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\Pedido.UseCase\bin\Debug\net5.0\Pedidos.Dados.pdb
+D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\Pedido.UseCase\bin\Debug\net5.0\Pedidos.Domain.pdb
+D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\Pedido.UseCase\obj\Debug\net5.0\Pedidos.UseCase.csproj.AssemblyReference.cache
+D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\Pedido.UseCase\obj\Debug\net5.0\Pedidos.UseCase.GeneratedMSBuildEditorConfig.editorconfig
+D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\Pedido.UseCase\obj\Debug\net5.0\Pedidos.UseCase.AssemblyInfoInputs.cache
+D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\Pedido.UseCase\obj\Debug\net5.0\Pedidos.UseCase.AssemblyInfo.cs
+D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\Pedido.UseCase\obj\Debug\net5.0\Pedidos.UseCase.csproj.CoreCompileInputs.cache
+D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\Pedido.UseCase\obj\Debug\net5.0\Pedidos.UseCase.csproj.CopyComplete
+D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\Pedido.UseCase\obj\Debug\net5.0\Pedidos.UseCase.dll
+D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\Pedido.UseCase\obj\Debug\net5.0\ref\Pedidos.UseCase.dll
+D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\Pedido.UseCase\obj\Debug\net5.0\Pedidos.UseCase.pdb

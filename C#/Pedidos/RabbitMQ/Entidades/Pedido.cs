@@ -8,7 +8,7 @@ namespace Pedidos.Domain.Entidades
         [JsonIgnore]
         public int CodPedido { get; set; }
         public string Retirada { get; set; }
-        [JsonIgnore]
+        //[JsonIgnore]
         public CodTipoIntegracao CodTipoIntegracao { get; set; }
         [JsonIgnore]
         public CodStatusPedido CodStatusPedido { get; set; }

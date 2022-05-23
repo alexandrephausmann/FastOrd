@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "OBvSNtz4RUn8GwC4LvJBHsYkMEcwHMqumqrruur7VUZhSEy8IkRCdUhhZ4EWsD8nzplttrlt4lOBuGmEHe8IRQ==",
+  "dgSpecHash": "NLbOzjz99INn31QvD1CfjB9mUqiWTW/XPrD4acfOa5OuX7LdIagLuGg6Izbc9OK7iXYEr1v/ofL3OmwEFwO5sw==",
   "success": true,
   "projectFilePath": "D:\\Dados\\Documentos\\Alexandre\\Projeto FastOrd\\FastOrd\\C#\\Pedidos\\Pedido.UseCase\\Pedidos.UseCase.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Alexandre\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\Alexandre\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
+    "C:\\Users\\Alexandre\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\Alexandre\\.nuget\\packages\\rabbitmq.client\\6.3.0\\rabbitmq.client.6.3.0.nupkg.sha512",
     "C:\\Users\\Alexandre\\.nuget\\packages\\runtime.native.system.data.sqlclient.sni\\4.7.0\\runtime.native.system.data.sqlclient.sni.4.7.0.nupkg.sha512",
     "C:\\Users\\Alexandre\\.nuget\\packages\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",

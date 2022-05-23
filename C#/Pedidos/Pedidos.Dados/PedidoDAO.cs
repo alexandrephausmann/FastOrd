@@ -1,7 +1,10 @@
-﻿using Pedidos.Dados.Interface;
+﻿using Newtonsoft.Json;
+using Pedidos.Dados.Interface;
 using Pedidos.Domain.Entidades;
+using Pedidos.Domain.Enums;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
@@ -35,7 +38,7 @@ namespace Pedidos.Dados
             return codigoProd;
         }
 
-        public void InserirItensPedido(ItemPedido itemPedido)
+        public void InserirItensPedido(List<ItemPedido> itensPedido)
         {
 
             using (sqlCon = new SqlConnection(SqlconString))
@@ -43,15 +46,43 @@ namespace Pedidos.Dados
                 sqlCon.Open();
                 SqlCommand sql_cmnd = new SqlCommand("PR_I_TB_ITEM_PEDIDO", sqlCon);
                 sql_cmnd.CommandType = CommandType.StoredProcedure;
-                sql_cmnd.Parameters.AddWithValue("@COD_PEDIDO", SqlDbType.Int).Value = itemPedido.CodPedido;
-                sql_cmnd.Parameters.AddWithValue("@COD_ITEM_PEDIDO", SqlDbType.Int).Value = itemPedido.CodItemPedido;
-                sql_cmnd.Parameters.AddWithValue("@COD_PRODUTO", SqlDbType.Int).Value = itemPedido.CodProduto;
-                sql_cmnd.Parameters.AddWithValue("@QUANTIDADE", SqlDbType.Int).Value = itemPedido.Quantidade;
+                string json = JsonConvert.SerializeObject(itensPedido);
+                DataTable DtPedidos = JsonConvert.DeserializeObject<DataTable>(json);
+                sql_cmnd.Parameters.AddWithValue("@Values", DtPedidos);
 
                 sql_cmnd.ExecuteNonQuery();
                 sqlCon.Close();
             }
 
+        }
+
+        public Dictionary<int, int> RecuperarCodigoProdutoFastOrder(CodTipoIntegracao codTipoIntegracao)
+        {
+            var relacaoCodigoExternoFastOrder = new Dictionary<int, int>();
+
+            using (sqlCon = new SqlConnection(SqlconString))
+            {
+                sqlCon.Open();
+                SqlCommand sql_cmnd = new SqlCommand("PR_S_TB_PRODUTO_INTEGRACAO", sqlCon);
+                sql_cmnd.CommandType = CommandType.StoredProcedure;
+                sql_cmnd.Parameters.AddWithValue("@COD_TIPO_INTEGRACAO", SqlDbType.Int).Value = (int)codTipoIntegracao;
+
+                using (SqlDataReader reader = sql_cmnd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        ProdutoIntegracao produtoIntegracao = new ProdutoIntegracao
+                        {
+                            CodProdutoExterno = (int)reader["COD_PRODUTO_EXTERNO"],
+                            CodProdutoFastOrder = (int)reader["COD_PRODUTO_FASTORDER"]
+                        };
+                        relacaoCodigoExternoFastOrder.Add(produtoIntegracao.CodProdutoExterno, produtoIntegracao.CodProdutoFastOrder);
+                    }
+                }                 
+
+                sqlCon.Close();
+            }
+            return relacaoCodigoExternoFastOrder;
         }
     }
 }

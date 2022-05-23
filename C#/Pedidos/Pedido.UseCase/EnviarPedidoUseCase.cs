@@ -6,6 +6,8 @@ using Pedidos.Domain.Entidades;
 using System.Collections.Generic;
 using Pedidos.Dados.Interface;
 using Pedidos.Domain.Enums;
+using System.Transactions;
+using System;
 
 namespace Pedidos.UseCase
 {
@@ -16,15 +18,39 @@ namespace Pedidos.UseCase
         {
             _pedidoDAO = pedidoDAO;
         }
-        public int CriarPedido(Pedido pedido,List<ItemPedido> itensPedido)
-        {
-            var codigoPedido = InserirPedido(pedido);
-            InserirItensPedido(itensPedido, codigoPedido);
-
-            return codigoPedido;
+        public void CriarPedido(Pedido pedido,List<ItemPedido> itensPedido)
+        {        
+            using (TransactionScope scope = new TransactionScope())
+            {
+                InserirPedido(pedido);
+                if (pedido.CodTipoIntegracao == CodTipoIntegracao.Ifood)
+                    RecuperarCodigoProdutoFastOrder(CodTipoIntegracao.Ifood,itensPedido);
+                InserirItensPedido(itensPedido, pedido.CodPedido);
+                scope.Complete();
+            }            
         }
 
-        private int InserirPedido(Pedido pedido)
+        private void RecuperarCodigoProdutoFastOrder(CodTipoIntegracao codTipoIntegracao, List<ItemPedido> itensPedido)
+        {
+            var relacaoCodigoExternoFastOrder = _pedidoDAO.RecuperarCodigoProdutoFastOrder(codTipoIntegracao);
+            int resultado;
+            
+            foreach(ItemPedido itemPedido in itensPedido)
+            {
+                if (relacaoCodigoExternoFastOrder.TryGetValue(itemPedido.CodProduto, out resultado))
+                {
+                    itemPedido.CodProduto = resultado;
+                }
+                else
+                {
+                    Console.WriteLine($"O código de produto {itemPedido.CodProduto} não está mapeado no sistema.");
+                }
+            }
+                
+
+        }
+
+        private void InserirPedido(Pedido pedido)
         {
             if (pedido.CodTipoIntegracao == 0)
                 pedido.CodTipoIntegracao = CodTipoIntegracao.SemIntegracao;
@@ -32,17 +58,17 @@ namespace Pedidos.UseCase
             if (pedido.CodStatusPedido == 0)
                 pedido.CodStatusPedido = CodStatusPedido.Realizado;
 
-            return _pedidoDAO.InserirPedido(pedido); 
+            pedido.CodPedido = _pedidoDAO.InserirPedido(pedido); 
         }
 
         private void InserirItensPedido(List<ItemPedido> itensPedido,int codigoPedido)
         {
             for (int i = 0; i < itensPedido.Count; i++)
-            {
-                itensPedido[i].CodItemPedido = i + 1;
-                itensPedido[i].CodPedido = codigoPedido;
-                _pedidoDAO.InserirItensPedido(itensPedido[i]);
-            }
+             {
+                 itensPedido[i].CodItemPedido = i + 1;
+                 itensPedido[i].CodPedido = codigoPedido;
+             }
+            _pedidoDAO.InserirItensPedido(itensPedido);
         }
 
         public void SendMessage<T>(T message)

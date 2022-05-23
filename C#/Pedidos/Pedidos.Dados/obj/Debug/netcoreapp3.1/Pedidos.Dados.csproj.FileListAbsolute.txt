@@ -11,4 +11,3 @@ D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\Pedidos.Dados\b
 D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\Pedidos.Dados\obj\Debug\netcoreapp3.1\Pedidos.Dados.csproj.CopyComplete
 D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\Pedidos.Dados\obj\Debug\netcoreapp3.1\Pedidos.Dados.dll
 D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\Pedidos.Dados\obj\Debug\netcoreapp3.1\Pedidos.Dados.pdb
-D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\Pedidos.Dados\bin\Debug\netcoreapp3.1\appconfig.config
