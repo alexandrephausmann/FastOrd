@@ -7,8 +7,14 @@ D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\Pedidos\bin\Deb
 D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\Pedidos\bin\Debug\net5.0\Pedidos.dll
 D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\Pedidos\bin\Debug\net5.0\ref\Pedidos.dll
 D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\Pedidos\bin\Debug\net5.0\Pedidos.pdb
+D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\Pedidos\bin\Debug\net5.0\AutoMapper.dll
+D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\Pedidos\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\Pedidos\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\Pedidos\bin\Debug\net5.0\Microsoft.Extensions.Options.dll
+D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\Pedidos\bin\Debug\net5.0\Microsoft.Extensions.Primitives.dll
 D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\Pedidos\bin\Debug\net5.0\Microsoft.OpenApi.dll
 D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\Pedidos\bin\Debug\net5.0\Microsoft.Win32.SystemEvents.dll
+D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\Pedidos\bin\Debug\net5.0\Newtonsoft.Json.dll
 D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\Pedidos\bin\Debug\net5.0\RabbitMQ.Client.dll
 D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\Pedidos\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
 D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\Pedidos\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
@@ -16,6 +22,7 @@ D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\Pedidos\bin\Deb
 D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\Pedidos\bin\Debug\net5.0\System.Configuration.ConfigurationManager.dll
 D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\Pedidos\bin\Debug\net5.0\System.Data.SqlClient.dll
 D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\Pedidos\bin\Debug\net5.0\System.Drawing.Common.dll
+D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\Pedidos\bin\Debug\net5.0\System.Runtime.CompilerServices.Unsafe.dll
 D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\Pedidos\bin\Debug\net5.0\System.Security.AccessControl.dll
 D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\Pedidos\bin\Debug\net5.0\System.Security.Cryptography.ProtectedData.dll
 D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\Pedidos\bin\Debug\net5.0\System.Security.Permissions.dll
@@ -53,10 +60,3 @@ D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\Pedidos\obj\Deb
 D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\Pedidos\obj\Debug\net5.0\ref\Pedidos.dll
 D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\Pedidos\obj\Debug\net5.0\Pedidos.pdb
 D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\Pedidos\obj\Debug\net5.0\Pedidos.genruntimeconfig.cache
-D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\Pedidos\bin\Debug\net5.0\Newtonsoft.Json.dll
-D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\Pedidos\bin\Debug\net5.0\AutoMapper.dll
-D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\Pedidos\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
-D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\Pedidos\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
-D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\Pedidos\bin\Debug\net5.0\Microsoft.Extensions.Options.dll
-D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\Pedidos\bin\Debug\net5.0\Microsoft.Extensions.Primitives.dll
-D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\Pedidos\bin\Debug\net5.0\System.Runtime.CompilerServices.Unsafe.dll

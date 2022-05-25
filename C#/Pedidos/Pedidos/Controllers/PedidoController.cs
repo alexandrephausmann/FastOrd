@@ -5,6 +5,8 @@ using Pedidos.Models.Request;
 using Pedidos.Models.In;
 using System;
 using AutoMapper;
+using Pedidos.Domain.Enums;
+using Pedidos.Domain.Retorno;
 
 namespace Pedidos.Controllers
 {
@@ -14,12 +16,20 @@ namespace Pedidos.Controllers
     {
         private readonly ILogger<PedidoController> _logger;
         private readonly IEnviarPedidoUseCase _enviarPedidoUseCase;
+        private readonly IConsultarPedidosUseCase _consultarPedidosUseCase;
         private readonly IMapper _mapper;
 
-        public PedidoController(ILogger<PedidoController> logger, IEnviarPedidoUseCase enviarPedidoUseCase, IMapper mapper)
+        public PedidoController
+        (
+            ILogger<PedidoController> logger, 
+            IEnviarPedidoUseCase enviarPedidoUseCase,
+            IConsultarPedidosUseCase consultarPedidosUseCase,
+            IMapper mapper           
+        )
         {
             _logger = logger;
             _enviarPedidoUseCase = enviarPedidoUseCase;
+            _consultarPedidosUseCase = consultarPedidosUseCase;
             _mapper = mapper;
         }
 
@@ -39,6 +49,23 @@ namespace Pedidos.Controllers
             }
            
             return Ok(new { pedido = pedidoIn.Pedido.CodPedido });
+        }
+
+        [Route("api/ConsultarPedidos")]
+        [HttpGet]
+        public IActionResult ConsultarPedidos([FromQuery(Name = "codStatusPedido")] CodStatusPedido codStatusPedido)
+        {
+            PedidosRetorno pedidosRetorno = new PedidosRetorno { };
+            try
+            {
+                pedidosRetorno = _consultarPedidosUseCase.ConsultarPedidos(codStatusPedido);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Erro ao inserir pedido {0}", ex.Message);
+            }
+
+            return Ok(new { pedido = pedidosRetorno });
         }
     }
 }

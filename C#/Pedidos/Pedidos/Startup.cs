@@ -25,7 +25,12 @@ namespace Pedidos
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            //Injeção de dependencia de UseCases
             services.AddTransient<IEnviarPedidoUseCase, EnviarPedidoUseCase>();
+            services.AddTransient<IConsultarPedidosUseCase, ConsultarPedidosUseCase>();
+
+            //Injeção de dependencia de DAO
             services.AddTransient<IPedidoDAO, PedidoDAO>();
 
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());

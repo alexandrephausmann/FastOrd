@@ -2,7 +2,6 @@ D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\RabbitMQ\bin\De
 D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\RabbitMQ\bin\Debug\net5.0\Pedidos.Domain.dll
 D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\RabbitMQ\bin\Debug\net5.0\ref\Pedidos.Domain.dll
 D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\RabbitMQ\bin\Debug\net5.0\Pedidos.Domain.pdb
-D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\RabbitMQ\obj\Debug\net5.0\Pedidos.Domain.csproj.AssemblyReference.cache
 D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\RabbitMQ\obj\Debug\net5.0\Pedidos.Domain.GeneratedMSBuildEditorConfig.editorconfig
 D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\RabbitMQ\obj\Debug\net5.0\Pedidos.Domain.AssemblyInfoInputs.cache
 D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\RabbitMQ\obj\Debug\net5.0\Pedidos.Domain.AssemblyInfo.cs
@@ -10,3 +9,4 @@ D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\RabbitMQ\obj\De
 D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\RabbitMQ\obj\Debug\net5.0\Pedidos.Domain.dll
 D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\RabbitMQ\obj\Debug\net5.0\ref\Pedidos.Domain.dll
 D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\RabbitMQ\obj\Debug\net5.0\Pedidos.Domain.pdb
+D:\Dados\Documentos\Alexandre\Projeto FastOrd\FastOrd\C#\Pedidos\RabbitMQ\obj\Debug\net5.0\Pedidos.Domain.csproj.AssemblyReference.cache

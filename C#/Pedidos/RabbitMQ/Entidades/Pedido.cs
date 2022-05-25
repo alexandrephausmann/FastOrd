@@ -15,7 +15,7 @@ namespace Pedidos.Domain.Entidades
         public string Rua { get; set; }
         public string Bairro { get; set; }
         public string Cep { get; set; }
-        public int NumResidencia { get; set; }
+        public int? NumResidencia { get; set; }
         public string DadoComplementar { get; set; }
         public string NumCelular { get; set; }
     }

@@ -1,5 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
+
 namespace Pedidos.Domain.Entidades
 {
     public class ItemPedido
@@ -9,6 +10,8 @@ namespace Pedidos.Domain.Entidades
         [JsonIgnore]
         public int CodItemPedido { get; set; }
         public int CodProduto { get; set; }
+        public string DescProduto { get; set; }
         public int Quantidade { get; set; }
+
     }
 }
