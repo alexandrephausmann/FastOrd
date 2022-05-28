@@ -15,21 +15,24 @@ namespace Pedidos.Controllers
     public class PedidoController : ControllerBase
     {
         private readonly ILogger<PedidoController> _logger;
-        private readonly IEnviarPedidoUseCase _enviarPedidoUseCase;
+        private readonly ICriarPedidoUseCase _criarPedidoUseCase;
         private readonly IConsultarPedidosUseCase _consultarPedidosUseCase;
+        private readonly IEnviarMensagemRabbitUseCase _enviarMensagemRabbitUseCase;
         private readonly IMapper _mapper;
 
         public PedidoController
         (
             ILogger<PedidoController> logger, 
-            IEnviarPedidoUseCase enviarPedidoUseCase,
+            ICriarPedidoUseCase enviarPedidoUseCase,
             IConsultarPedidosUseCase consultarPedidosUseCase,
+            IEnviarMensagemRabbitUseCase enviarMensagemRabbitUseCase,
             IMapper mapper           
         )
         {
             _logger = logger;
-            _enviarPedidoUseCase = enviarPedidoUseCase;
+            _criarPedidoUseCase = enviarPedidoUseCase;
             _consultarPedidosUseCase = consultarPedidosUseCase;
+            _enviarMensagemRabbitUseCase = enviarMensagemRabbitUseCase;
             _mapper = mapper;
         }
 
@@ -40,8 +43,8 @@ namespace Pedidos.Controllers
             var pedidoIn = _mapper.Map<PedidoIn>(pedidoRequest);
             try
             {
-                _enviarPedidoUseCase.CriarPedido(pedidoIn.Pedido, pedidoIn.ItensPedido);
-                _enviarPedidoUseCase.SendMessage(pedidoIn);
+                _criarPedidoUseCase.CriarPedido(pedidoIn.Pedido, pedidoIn.ItensPedido);
+                _enviarMensagemRabbitUseCase.EnviarMensagem(pedidoIn);
             }
             catch (Exception ex)
             {

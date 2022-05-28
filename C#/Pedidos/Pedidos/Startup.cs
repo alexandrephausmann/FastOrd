@@ -27,8 +27,10 @@ namespace Pedidos
             services.AddControllers();
 
             //Injeção de dependencia de UseCases
-            services.AddTransient<IEnviarPedidoUseCase, EnviarPedidoUseCase>();
+            services.AddTransient<ICriarPedidoUseCase, CriarPedidoUseCase>();
             services.AddTransient<IConsultarPedidosUseCase, ConsultarPedidosUseCase>();
+            services.AddTransient<IIntegrarProdutoUseCase, IntegrarProdutoUseCase>();
+            services.AddTransient<IEnviarMensagemRabbitUseCase, EnviarMensagemRabbitUseCase>();
 
             //Injeção de dependencia de DAO
             services.AddTransient<IPedidoDAO, PedidoDAO>();
