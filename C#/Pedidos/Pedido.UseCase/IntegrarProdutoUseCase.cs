@@ -1,5 +1,6 @@
 ﻿using Pedidos.Dados.Interface;
 using Pedidos.Domain.Entidades;
+using Pedidos.Domain.EntidadesEF;
 using Pedidos.Domain.Enums;
 using Pedidos.UseCase.Interfaces;
 using System;
@@ -15,15 +16,17 @@ namespace Pedidos.UseCase
             _pedidoDAO = pedidoDAO;
         }
 
-        public void RecuperarCodigoProdutoFastOrder(CodTipoIntegracao codTipoIntegracao, List<ItemPedido> itensPedido)
+        public void RecuperarCodigoProdutoFastOrder(CodTipoIntegracao codTipoIntegracao, List<TbItemPedido> itensPedido)
         {
             var relacaoCodigoExternoFastOrder = _pedidoDAO.RecuperarCodigoProdutoFastOrder(codTipoIntegracao);
 
-            foreach (ItemPedido itemPedido in itensPedido)
+            foreach (TbItemPedido itemPedido in itensPedido)
             {
-                if (relacaoCodigoExternoFastOrder.TryGetValue(itemPedido.CodProduto, out int resultado))
+                var produto = relacaoCodigoExternoFastOrder.Find(prod => prod.CodProdutoExterno == itemPedido.CodProduto);
+
+                if (produto != null)
                 {
-                    itemPedido.CodProduto = resultado;
+                    itemPedido.CodProduto = produto.CodProdutoFastorder;
                 }
                 else
                 {

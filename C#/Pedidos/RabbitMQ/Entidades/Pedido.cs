@@ -5,13 +5,12 @@ namespace Pedidos.Domain.Entidades
 {
     public class Pedido
     {
-        [JsonIgnore]
         public int CodPedido { get; set; }
         public string Retirada { get; set; }
-        //[JsonIgnore]
         public CodTipoIntegracao CodTipoIntegracao { get; set; }
-        [JsonIgnore]
+        public string DescTipoIntegracao { get; set; }
         public CodStatusPedido CodStatusPedido { get; set; }
+        public string DescStatusPedido { get; set; }    
         public string Rua { get; set; }
         public string Bairro { get; set; }
         public string Cep { get; set; }

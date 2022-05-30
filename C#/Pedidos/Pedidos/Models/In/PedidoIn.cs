@@ -1,11 +1,12 @@
 ﻿using Pedidos.Domain.Entidades;
+using Pedidos.Domain.EntidadesEF;
 using System.Collections.Generic;
 
 namespace Pedidos.Models.In
 {
     public class PedidoIn
     {
-        public Pedido Pedido { get; set; }
-        public List<ItemPedido> ItensPedido { get; set; }
+        public TbPedido Pedido { get; set; }
+        public List<TbItemPedido> ItensPedido { get; set; }
     }
 }

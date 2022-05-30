@@ -1,0 +1,59 @@
+﻿{
+   "CodeGenerationMode": 0,
+   "ContextClassName": "FastOrderContext",
+   "ContextNamespace": null,
+   "DefaultDacpacSchema": null,
+   "FilterSchemas": false,
+   "IncludeConnectionString": true,
+   "ModelNamespace": null,
+   "OutputContextPath": null,
+   "OutputPath": "EntidadesEF",
+   "ProjectRootNamespace": "Pedidos.Domain",
+   "Schemas": null,
+   "SelectedHandlebarsLanguage": 0,
+   "SelectedToBeGenerated": 0,
+   "Tables": [
+      {
+         "Name": "[dbo].[TB_ITEM_PEDIDO]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[TB_PEDIDO]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[TB_PRODUTO]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[TB_PRODUTO_INTEGRACAO]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[TB_STATUS_PEDIDO]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[TB_TIPO_INTEGRACAO]",
+         "ObjectType": 0
+      }
+   ],
+   "UiHint": "DESKTOP-3TBHR6V\\SQLEXPRESS.FastOrder",
+   "UseBoolPropertiesWithoutDefaultSql": false,
+   "UseDatabaseNames": false,
+   "UseDbContextSplitting": false,
+   "UseFluentApiOnly": true,
+   "UseHandleBars": false,
+   "UseHierarchyId": false,
+   "UseInflector": false,
+   "UseLegacyPluralizer": false,
+   "UseManyToManyEntity": false,
+   "UseNoConstructor": false,
+   "UseNoDefaultConstructor": false,
+   "UseNoNavigations": false,
+   "UseNoObjectFilter": false,
+   "UseNodaTime": false,
+   "UseNullableReferences": false,
+   "UseSchemaFolders": false,
+   "UseSpatial": false
+}

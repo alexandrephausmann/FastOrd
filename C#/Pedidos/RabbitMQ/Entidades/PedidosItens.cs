@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Pedidos.Domain.EntidadesEF;
+using System.Collections.Generic;
 
 namespace Pedidos.Domain.Entidades
 {
