@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "mSCOHk1bI3xDIlaDJTkTVBEv2Wx7p3bs8ejI7enBGTTB3GZEHCAyvwqYSW4XWByGQqw1FT1unkNCEPBnsTYTfg==",
+  "dgSpecHash": "A8GsLku7FxKnnMgnUXFhLUw9HOzkyhOvGa7AN6I8JKP778pLIPSUofEHEYsjY0y5SGv1z5bjA1IDe3i7/MDyuA==",
   "success": true,
   "projectFilePath": "D:\\Dados\\Documentos\\Alexandre\\Projeto FastOrd\\FastOrd\\C#\\Pedidos\\Pedidos\\Pedidos.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Alexandre\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
     "C:\\Users\\Alexandre\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
+    "C:\\Users\\Alexandre\\.nuget\\packages\\log4net\\2.0.14\\log4net.2.0.14.nupkg.sha512",
     "C:\\Users\\Alexandre\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\Alexandre\\.nuget\\packages\\microsoft.data.sqlclient\\2.0.1\\microsoft.data.sqlclient.2.0.1.nupkg.sha512",
     "C:\\Users\\Alexandre\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.0.1\\microsoft.data.sqlclient.sni.runtime.2.0.1.nupkg.sha512",

@@ -30,7 +30,7 @@ namespace Pedidos.UseCase
                 }
                 else
                 {
-                    Console.WriteLine($"O código de produto {itemPedido.CodProduto} não está mapeado no sistema.");
+                    throw new Exception($"O código de produto {itemPedido.CodProduto} não está mapeado no sistema.");
                 }
             }
         }

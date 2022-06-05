@@ -45,13 +45,14 @@ namespace Pedidos.Controllers
             {
                 _criarPedidoUseCase.CriarPedido(pedidoIn.Pedido, pedidoIn.ItensPedido);
                 _enviarMensagemRabbitUseCase.EnviarMensagem(pedidoIn);
+                return Ok(new { pedido = pedidoIn.Pedido, itemPedido = pedidoIn.ItensPedido });
             }
             catch (Exception ex)
             {
                 _logger.LogError("Erro ao inserir pedido {0}", ex.Message);
+                return BadRequest($"Erro ao inserir pedido: {ex.Message}");
             }
-           
-            return Ok(new { pedido = pedidoIn.Pedido.CodPedido });
+                      
         }
 
         [Route("api/ConsultarPedidos")]
@@ -62,13 +63,13 @@ namespace Pedidos.Controllers
             try
             {
                 pedidosRetorno = _consultarPedidosUseCase.ConsultarPedidos(codStatusPedido);
+                return Ok(new { pedido = pedidosRetorno });
             }
             catch (Exception ex)
             {
-                _logger.LogError("Erro ao inserir pedido {0}", ex.Message);
-            }
-
-            return Ok(new { pedido = pedidosRetorno });
+                _logger.LogError("Erro ao consultar pedidos: {0}", ex.Message);
+                return BadRequest($"Erro ao consultar pedidos: {ex.Message}");
+            }           
         }
     }
 }

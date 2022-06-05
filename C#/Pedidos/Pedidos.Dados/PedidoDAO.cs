@@ -1,4 +1,5 @@
-﻿using Pedidos.Dados.Interface;
+﻿using Microsoft.Extensions.Configuration;
+using Pedidos.Dados.Interface;
 using Pedidos.Domain.Entidades;
 using Pedidos.Domain.EntidadesEF;
 using Pedidos.Domain.Enums;
@@ -11,10 +12,16 @@ namespace Pedidos.Dados
 {
     public class PedidoDAO : IPedidoDAO
     {
+        public IConfiguration _configuracao { get; }
+        public PedidoDAO(IConfiguration configuracao)
+        {
+            _configuracao = configuracao;
+        }
+
         public int InserirPedido(TbPedido pedido)
         {
             int codPedido = 0;
-            using (var db = new FastOrderContext())
+            using (var db = new FastOrderContext(_configuracao))
             {
                 db.TbPedido.Add(pedido);
                 db.SaveChanges();
@@ -25,7 +32,7 @@ namespace Pedidos.Dados
 
         public void InserirItensPedido(List<TbItemPedido> itensPedido)
         {
-            using (var db = new FastOrderContext())
+            using (var db = new FastOrderContext(_configuracao))
             {
                 db.TbItemPedido.AddRange(itensPedido);
                 db.SaveChanges();
@@ -36,7 +43,7 @@ namespace Pedidos.Dados
         {
             var relacaoCodigoExternoFastOrder = new List<TbProdutoIntegracao>();
 
-            using (var db = new FastOrderContext())
+            using (var db = new FastOrderContext(_configuracao))
             {
                 relacaoCodigoExternoFastOrder = db.TbProdutoIntegracao.Where(prod => prod.CodTipoIntegracao == (int?)codTipoIntegracao).ToList();
             }
@@ -47,7 +54,7 @@ namespace Pedidos.Dados
         {
             var pedidosRetorno = new PedidosRetorno();
 
-            using (var db = new FastOrderContext())
+            using (var db = new FastOrderContext(_configuracao))
             {
                 var pedidos = (from pedido in db.TbPedido
                                join itPedido in db.TbItemPedido

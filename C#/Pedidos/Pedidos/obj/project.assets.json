@@ -27,6 +27,18 @@
           "lib/netstandard2.1/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {}
         }
       },
+      "log4net/2.0.14": {
+        "type": "package",
+        "dependencies": {
+          "System.Configuration.ConfigurationManager": "4.5.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/log4net.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/log4net.dll": {}
+        }
+      },
       "Microsoft.CSharp/4.7.0": {
         "type": "package",
         "compile": {
@@ -1615,7 +1627,8 @@
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "5.0.17",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.17",
-          "RabbitMQ.Client": "6.3.0"
+          "RabbitMQ.Client": "6.3.0",
+          "System.Configuration.ConfigurationManager": "6.0.0"
         },
         "compile": {
           "bin/placeholder/Pedidos.Domain.dll": {}
@@ -1669,6 +1682,34 @@
         "automapper.extensions.microsoft.dependencyinjection.nuspec",
         "icon.png",
         "lib/netstandard2.1/AutoMapper.Extensions.Microsoft.DependencyInjection.dll"
+      ]
+    },
+    "log4net/2.0.14": {
+      "sha512": "KevyXUuhOyhx7l1jWwq6ZGVlRC2Aetg0qDp6rJpfSZGcDPKQDwfOE6yEuVkVf0kEP08NQqBDn/TQ/TJv4wgyhw==",
+      "type": "package",
+      "path": "log4net/2.0.14",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net20/log4net.dll",
+        "lib/net20/log4net.xml",
+        "lib/net35-client/log4net.dll",
+        "lib/net35-client/log4net.xml",
+        "lib/net35/log4net.dll",
+        "lib/net35/log4net.xml",
+        "lib/net40-client/log4net.dll",
+        "lib/net40-client/log4net.xml",
+        "lib/net40/log4net.dll",
+        "lib/net40/log4net.xml",
+        "lib/net45/log4net.dll",
+        "lib/net45/log4net.xml",
+        "lib/netstandard1.3/log4net.dll",
+        "lib/netstandard1.3/log4net.xml",
+        "lib/netstandard2.0/log4net.dll",
+        "lib/netstandard2.0/log4net.xml",
+        "log4net.2.0.14.nupkg.sha512",
+        "log4net.nuspec",
+        "package-icon.png"
       ]
     },
     "Microsoft.CSharp/4.7.0": {
@@ -5970,7 +6011,8 @@
       "AutoMapper.Extensions.Microsoft.DependencyInjection >= 11.0.0",
       "Pedidos.Domain >= 1.0.0",
       "Pedidos.UseCase >= 1.0.0",
-      "Swashbuckle.AspNetCore >= 6.3.1"
+      "Swashbuckle.AspNetCore >= 6.3.1",
+      "log4net >= 2.0.14"
     ]
   },
   "packageFolders": {
@@ -6030,6 +6072,10 @@
           "Swashbuckle.AspNetCore": {
             "target": "Package",
             "version": "[6.3.1, )"
+          },
+          "log4net": {
+            "target": "Package",
+            "version": "[2.0.14, )"
           }
         },
         "imports": [

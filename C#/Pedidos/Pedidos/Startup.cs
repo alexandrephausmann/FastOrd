@@ -1,11 +1,13 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using Pedidos.Dados;
 using Pedidos.Dados.Interface;
+using Pedidos.Domain.EntidadesEF;
 using Pedidos.UseCase;
 using Pedidos.UseCase.Interfaces;
 using System;

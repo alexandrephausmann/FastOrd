@@ -1059,7 +1059,8 @@
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "5.0.17",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.17",
-          "RabbitMQ.Client": "6.3.0"
+          "RabbitMQ.Client": "6.3.0",
+          "System.Configuration.ConfigurationManager": "6.0.0"
         },
         "runtime": {
           "Pedidos.Domain.dll": {}
