@@ -1,15 +1,15 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using Pedidos.Dados;
 using Pedidos.Dados.Interface;
-using Pedidos.Domain.EntidadesEF;
-using Pedidos.UseCase;
-using Pedidos.UseCase.Interfaces;
+using Pedidos.UseCase.Orders;
+using Pedidos.UseCase.Orders.Interfaces;
+using Pedidos.UseCase.Products;
+using Pedidos.UseCase.Products.Interfaces;
 using System;
 
 namespace Pedidos
@@ -34,8 +34,13 @@ namespace Pedidos
             services.AddTransient<IIntegrarProdutoUseCase, IntegrarProdutoUseCase>();
             services.AddTransient<IEnviarMensagemRabbitUseCase, EnviarMensagemRabbitUseCase>();
 
+            //Injeção de dependencia de UseCases products
+
+            services.AddTransient<IGetProductsUseCase, GetProductsUseCase>();
+
             //Injeção de dependencia de DAO
             services.AddTransient<IPedidoDAO, PedidoDAO>();
+            services.AddTransient<IProductDAO, ProductDAO>();
 
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 

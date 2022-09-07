@@ -1,4 +1,4 @@
-﻿namespace Pedidos.UseCase.Interfaces
+﻿namespace Pedidos.UseCase.Orders.Interfaces
 {
     public interface IEnviarMensagemRabbitUseCase
     {

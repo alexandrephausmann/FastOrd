@@ -1,9 +1,9 @@
-﻿using Pedidos.UseCase.Interfaces;
+﻿using Pedidos.UseCase.Orders.Interfaces;
 using RabbitMQ.Client;
 using System.Text;
 using System.Text.Json;
 
-namespace Pedidos.UseCase
+namespace Pedidos.UseCase.Orders
 {
     public class EnviarMensagemRabbitUseCase : IEnviarMensagemRabbitUseCase
     {

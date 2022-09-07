@@ -1,12 +1,11 @@
-﻿using Pedidos.UseCase.Interfaces;
-using Pedidos.Domain.Entidades;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Pedidos.Dados.Interface;
 using Pedidos.Domain.Enums;
 using System.Transactions;
 using Pedidos.Domain.EntidadesEF;
+using Pedidos.UseCase.Orders.Interfaces;
 
-namespace Pedidos.UseCase
+namespace Pedidos.UseCase.Orders
 {
     public class CriarPedidoUseCase : ICriarPedidoUseCase
     {

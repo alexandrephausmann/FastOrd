@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using Pedidos.UseCase.Interfaces;
+using Pedidos.UseCase.Orders.Interfaces;
 using Pedidos.Models.Request;
 using Pedidos.Models.In;
 using System;
@@ -59,10 +59,9 @@ namespace Pedidos.Controllers
         [HttpGet]
         public IActionResult ConsultarPedidos([FromQuery(Name = "codStatusPedido")] CodStatusPedido codStatusPedido)
         {
-            PedidosRetorno pedidosRetorno = new PedidosRetorno { };
             try
             {
-                pedidosRetorno = _consultarPedidosUseCase.ConsultarPedidos(codStatusPedido);
+                PedidosRetorno pedidosRetorno = _consultarPedidosUseCase.ConsultarPedidos(codStatusPedido);
                 return Ok(new { pedido = pedidosRetorno });
             }
             catch (Exception ex)

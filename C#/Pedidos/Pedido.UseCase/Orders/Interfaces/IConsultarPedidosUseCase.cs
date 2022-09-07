@@ -1,7 +1,7 @@
 ﻿using Pedidos.Domain.Enums;
 using Pedidos.Domain.Retorno;
 
-namespace Pedidos.UseCase.Interfaces
+namespace Pedidos.UseCase.Orders.Interfaces
 {
     public interface IConsultarPedidosUseCase
     {

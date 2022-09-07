@@ -1,10 +1,8 @@
-﻿
-using Pedidos.Domain.Entidades;
-using Pedidos.Domain.EntidadesEF;
+﻿using Pedidos.Domain.EntidadesEF;
 using Pedidos.Domain.Enums;
 using System.Collections.Generic;
 
-namespace Pedidos.UseCase.Interfaces
+namespace Pedidos.UseCase.Orders.Interfaces
 {
     public interface IIntegrarProdutoUseCase
     {

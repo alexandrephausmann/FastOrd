@@ -2,7 +2,7 @@
 using Pedidos.Domain.EntidadesEF;
 using System.Collections.Generic;
 
-namespace Pedidos.UseCase.Interfaces
+namespace Pedidos.UseCase.Orders.Interfaces
 {
     public interface ICriarPedidoUseCase
     {

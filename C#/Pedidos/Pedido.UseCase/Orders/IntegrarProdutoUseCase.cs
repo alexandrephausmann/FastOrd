@@ -2,11 +2,11 @@
 using Pedidos.Domain.Entidades;
 using Pedidos.Domain.EntidadesEF;
 using Pedidos.Domain.Enums;
-using Pedidos.UseCase.Interfaces;
+using Pedidos.UseCase.Orders.Interfaces;
 using System;
 using System.Collections.Generic;
 
-namespace Pedidos.UseCase
+namespace Pedidos.UseCase.Orders
 {
     public class IntegrarProdutoUseCase : IIntegrarProdutoUseCase
     {

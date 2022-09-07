@@ -1,0 +1,10 @@
+﻿using Pedidos.Domain.EntidadesEF;
+using System.Collections.Generic;
+
+namespace Pedidos.UseCase.Products.Interfaces
+{
+    public interface IGetProductsUseCase
+    {
+        List<TbProduto> GetProducts();
+    }
+}

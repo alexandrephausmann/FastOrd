@@ -1,9 +1,9 @@
 ﻿using Pedidos.Dados.Interface;
 using Pedidos.Domain.Enums;
 using Pedidos.Domain.Retorno;
-using Pedidos.UseCase.Interfaces;
+using Pedidos.UseCase.Orders.Interfaces;
 
-namespace Pedidos.UseCase
+namespace Pedidos.UseCase.Orders
 {
     public class ConsultarPedidosUseCase : IConsultarPedidosUseCase
     {
