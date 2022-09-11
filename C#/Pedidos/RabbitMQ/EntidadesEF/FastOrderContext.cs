@@ -25,7 +25,7 @@ namespace Pedidos.Domain.EntidadesEF
 
         public virtual DbSet<TbItemPedido> TbItemPedido { get; set; }
         public virtual DbSet<TbPedido> TbPedido { get; set; }
-        public virtual DbSet<TbProduto> TbProduto { get; set; }
+        public virtual DbSet<TbProduct> TbProduct { get; set; }
         public virtual DbSet<TbProdutoIntegracao> TbProdutoIntegracao { get; set; }
         public virtual DbSet<TbStatusPedido> TbStatusPedido { get; set; }
         public virtual DbSet<TbTipoIntegracao> TbTipoIntegracao { get; set; }
@@ -120,21 +120,21 @@ namespace Pedidos.Domain.EntidadesEF
                     .HasConstraintName("FK__TB_PEDIDO__COD_T__5629CD9C");
             });
 
-            modelBuilder.Entity<TbProduto>(entity =>
+            modelBuilder.Entity<TbProduct>(entity =>
             {
-                entity.HasKey(e => e.CodProduto)
+                entity.HasKey(e => e.CodProduct)
                     .HasName("PK__TB_PRODU__AAF2697D78854622");
 
-                entity.ToTable("TB_PRODUTO");
+                entity.ToTable("TB_PRODUCT");
 
-                entity.Property(e => e.CodProduto).HasColumnName("COD_PRODUTO");
+                entity.Property(e => e.CodProduct).HasColumnName("COD_PRODUCT");
 
-                entity.Property(e => e.DescProduto)
+                entity.Property(e => e.DescProduct)
                     .HasMaxLength(255)
                     .IsUnicode(false)
-                    .HasColumnName("DESC_PRODUTO");
+                    .HasColumnName("DESC_PRODUCT");
 
-                entity.Property(e => e.ValorProduto).HasColumnName("VALOR_PRODUTO");
+                entity.Property(e => e.ProductValue).HasColumnName("PRODUCT_VALUE");
             });
 
             modelBuilder.Entity<TbProdutoIntegracao>(entity =>

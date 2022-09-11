@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Pedidos.Domain.EntidadesEF;
 using Pedidos.Models.In;
 using Pedidos.Models.Request;
 
@@ -9,6 +10,8 @@ namespace Pedidos.Mapping
         public MappingProfile()
         {
             CreateMap<PedidoIn, PedidoRequest>().ReverseMap();
+            CreateMap<ProductRequest, TbProduct>().ReverseMap();
+
         }
 
     }

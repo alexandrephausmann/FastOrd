@@ -5,6 +5,6 @@ namespace Pedidos.UseCase.Products.Interfaces
 {
     public interface IGetProductsUseCase
     {
-        List<TbProduto> GetProducts();
+        List<TbProduct> GetProducts();
     }
 }

@@ -8,6 +8,7 @@ using AutoMapper;
 using Pedidos.Domain.Enums;
 using Pedidos.Domain.Retorno;
 using Pedidos.UseCase.Products.Interfaces;
+using Pedidos.Domain.EntidadesEF;
 
 namespace Pedidos.Controllers
 {
@@ -17,47 +18,54 @@ namespace Pedidos.Controllers
     {
         private readonly ILogger<ProductController> _logger;
         private readonly IGetProductsUseCase _getProductsUseCase;
+        private readonly ICreateProductUseCase _createProductUseCase;
+        private readonly IUpdateProductUseCase _updateProductUseCase;
+        private readonly IDeleteProductUseCase _deleteProductUseCase;
         private readonly IMapper _mapper;
 
         public ProductController
         (
             ILogger<ProductController> logger, 
             IGetProductsUseCase getProductsUseCase,
+            ICreateProductUseCase createProductUseCase,
+            IUpdateProductUseCase updateProductUseCase,
+            IDeleteProductUseCase deleteProductUseCase,
             IMapper mapper           
         )
         {
             _logger = logger;
             _getProductsUseCase = getProductsUseCase;
+            _createProductUseCase = createProductUseCase;
+            _updateProductUseCase = updateProductUseCase;
+            _deleteProductUseCase = deleteProductUseCase;
             _mapper = mapper;
         }
 
-        [Route("api/create")]
+        [Route("")]
         [HttpPost]
-        public IActionResult Create([FromBody]PedidoRequest pedidoRequest)
+        public IActionResult Create([FromBody] ProductRequest productRequest)
         {
-            /*  var pedidoIn = _mapper.Map<PedidoIn>(pedidoRequest);
+              var productIn = _mapper.Map<TbProduct>(productRequest);
               try
               {
-                  _criarPedidoUseCase.CriarPedido(pedidoIn.Pedido, pedidoIn.ItensPedido);
-                  _enviarMensagemRabbitUseCase.EnviarMensagem(pedidoIn);
-                  return Ok(new { pedido = pedidoIn.Pedido, itemPedido = pedidoIn.ItensPedido });
+                _createProductUseCase.CreateProduct(productIn);
+                return Ok();
               }
               catch (Exception ex)
               {
-                  _logger.LogError("Erro ao inserir pedido {0}", ex.Message);
-                  return BadRequest($"Erro ao inserir pedido: {ex.Message}");
-              }*/
-            return Ok();
+                  _logger.LogError("Error to create product {0}", ex.Message);
+                  return BadRequest($"Error to create product: {ex.Message}");
+              }
         }
 
-        [Route("api/getProducts")]
+        [Route("")]
         [HttpGet]
         public IActionResult GetProducts()
         {
             try
             {
                 var products = _getProductsUseCase.GetProducts();
-                return Ok(new { products = products });
+                return Ok(products);
             }
             catch (Exception ex)
             {
@@ -66,35 +74,36 @@ namespace Pedidos.Controllers
             }           
         }
 
-        [Route("api/updateProduct")]
+        [Route("")]
         [HttpPut]
-        public IActionResult UpdateProduct([FromBody] PedidoRequest pedidoRequest)
+        public IActionResult UpdateProduct([FromBody] ProductRequest productRequest)
         {
+            var productIn = _mapper.Map<TbProduct>(productRequest);
             try
             {
-               // PedidosRetorno pedidosRetorno = _consultarPedidosUseCase.ConsultarPedidos(codStatusPedido);
+                _updateProductUseCase.UpdateProduct(productIn);
                 return Ok();
             }
             catch (Exception ex)
             {
-                _logger.LogError("Erro ao consultar pedidos: {0}", ex.Message);
-                return BadRequest($"Erro ao consultar pedidos: {ex.Message}");
+                _logger.LogError("Error to update product {0}", ex.Message);
+                return BadRequest($"Error to update product: {ex.Message}");
             }
         }
 
-        [Route("api/deleteProduct")]
+        [Route("")]
         [HttpDelete]
-        public IActionResult DeleteProduct([FromBody] string id)
+        public IActionResult DeleteProduct([FromBody] ProductRequest productRequest)
         {
             try
             {
-                //PedidosRetorno pedidosRetorno = _consultarPedidosUseCase.ConsultarPedidos(codStatusPedido);
+                _deleteProductUseCase.DeleteProduct((int)productRequest.CodProduct);
                 return Ok();
             }
             catch (Exception ex)
             {
-                _logger.LogError("Erro ao consultar pedidos: {0}", ex.Message);
-                return BadRequest($"Erro ao consultar pedidos: {ex.Message}");
+                _logger.LogError("Error to delete product: {0}", ex.Message);
+                return BadRequest($"Error to delete product: {ex.Message}");
             }
         }
     }

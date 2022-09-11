@@ -5,17 +5,17 @@ using System.Collections.Generic;
 
 namespace Pedidos.Domain.EntidadesEF
 {
-    public partial class TbProduto
+    public partial class TbProduct
     {
-        public TbProduto()
+        public TbProduct()
         {
             TbItemPedido = new HashSet<TbItemPedido>();
             TbProdutoIntegracao = new HashSet<TbProdutoIntegracao>();
         }
 
-        public int CodProduto { get; set; }
-        public string DescProduto { get; set; }
-        public double? ValorProduto { get; set; }
+        public int? CodProduct { get; set; }
+        public string DescProduct { get; set; }
+        public double? ProductValue { get; set; }
 
         public virtual ICollection<TbItemPedido> TbItemPedido { get; set; }
         public virtual ICollection<TbProdutoIntegracao> TbProdutoIntegracao { get; set; }

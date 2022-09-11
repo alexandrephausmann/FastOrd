@@ -12,6 +12,6 @@ namespace Pedidos.Domain.EntidadesEF
         public int? CodProduto { get; set; }
         public int? Quantidade { get; set; }
 
-        public virtual TbProduto CodProdutoNavigation { get; set; }
+        public virtual TbProduct CodProdutoNavigation { get; set; }
     }
 }

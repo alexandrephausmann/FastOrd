@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -19,7 +19,9 @@ import { MatInputModule } from "@angular/material/input";
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
-
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatMenuModule } from '@angular/material/menu';
 
 
 import { FooterComponent } from './components/template/footer/footer.component';
@@ -35,6 +37,12 @@ import { HeaderComponent } from './components/template/header/header.component';
 import { ProductReadComponent } from './components/product/product-read/product-read.component';
 import { ProductDeleteComponent } from './components/product/product-delete/product-delete.component';
 import { ProductUpdateComponent } from './components/product/product-update/product-update.component';
+import { HttpClientModule } from '@angular/common/http';
+
+import localePt from '@angular/common/locales/pt';
+import { registerLocaleData } from '@angular/common';
+
+registerLocaleData(localePt);
 
 
 @NgModule({
@@ -68,7 +76,12 @@ import { ProductUpdateComponent } from './components/product/product-update/prod
     MatInputModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    MatSnackBarModule,
+    HttpClientModule,
+    MatButtonModule,
+    MatMenuModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

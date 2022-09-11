@@ -11,7 +11,7 @@ namespace Pedidos.Domain.EntidadesEF
         public int CodProdutoExterno { get; set; }
         public int? CodTipoIntegracao { get; set; }
 
-        public virtual TbProduto CodProdutoFastorderNavigation { get; set; }
+        public virtual TbProduct CodProdutoFastorderNavigation { get; set; }
         public virtual TbTipoIntegracao CodTipoIntegracaoNavigation { get; set; }
     }
 }

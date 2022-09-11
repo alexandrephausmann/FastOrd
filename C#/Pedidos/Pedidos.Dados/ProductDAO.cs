@@ -18,15 +18,43 @@ namespace Pedidos.Dados
             _configuracao = configuracao;
         }
 
-        public List<TbProduto> GetProducts()
+        public List<TbProduct> GetProducts()
         {
-            var products = new List<TbProduto>();
+            var products = new List<TbProduct>();
 
             using (var db = new FastOrderContext(_configuracao))
             {
-                products = db.TbProduto.ToList();
+                products = db.TbProduct.ToList();
             }
             return products;
+        }
+
+        public void CreateProduct(TbProduct product)
+        {
+            using (var db = new FastOrderContext(_configuracao))
+            {
+                db.TbProduct.Add(product);
+                db.SaveChanges();
+            }
+        }
+
+        public void UpdateProduct(TbProduct product)
+        {
+            using (var db = new FastOrderContext(_configuracao))
+            {
+                db.TbProduct.Update(product);
+                db.SaveChanges();
+            }
+        }
+
+        public void DeleteProduct(int id)
+        {          
+            using (var db = new FastOrderContext(_configuracao))
+            {
+                var product = db.TbProduct.First(p => p.CodProduct == id);
+                db.TbProduct.Remove(product);
+                db.SaveChanges();
+            }
         }
     }
 }

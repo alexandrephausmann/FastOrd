@@ -61,8 +61,8 @@ namespace Pedidos.Dados
                                on pedido.CodPedido equals itPedido.CodPedido
                                join stsPedido in db.TbStatusPedido
                                on pedido.CodStatusPedido equals stsPedido.CodStatusPedido
-                               join produto in db.TbProduto
-                               on itPedido.CodProduto equals produto.CodProduto
+                               join produto in db.TbProduct
+                               on itPedido.CodProduto equals produto.CodProduct
                                join integraProduto in db.TbTipoIntegracao
                                on pedido.CodTipoIntegracao equals integraProduto.CodTipoIntegracao
                                where stsPedido.CodStatusPedido == (int)codStatusPedido
@@ -90,16 +90,16 @@ namespace Pedidos.Dados
                 {
                     var pedidoItem = new PedidosItens();
                     var itensPedidos = (from itemPedido in db.TbItemPedido
-                                       join produto in db.TbProduto
-                                       on itemPedido.CodProduto equals produto.CodProduto
-                                       where itemPedido.CodPedido == codigoPedido
+                                       join produto in db.TbProduct
+                                       on itemPedido.CodProduto equals produto.CodProduct
+                                        where itemPedido.CodPedido == codigoPedido
                                        select new ItemPedido
                                        {
                                            CodItemPedido = itemPedido.CodItemPedido,
                                            CodPedido = itemPedido.CodPedido,
                                            Quantidade = (int)itemPedido.Quantidade,
-                                           CodProduto = produto.CodProduto,
-                                           DescProduto = produto.DescProduto
+                                           CodProduto = (int)produto.CodProduct,
+                                           DescProduto = produto.DescProduct
                                        }).ToList();    
                     pedidoItem.ItensPedido.AddRange(itensPedidos);
                     pedidoItem.Pedido = pedidos.Find(pedido => pedido.CodPedido == codigoPedido);

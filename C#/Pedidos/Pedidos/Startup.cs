@@ -26,6 +26,7 @@ namespace Pedidos
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors();
             services.AddControllers();
 
             //Injeção de dependencia de UseCases
@@ -36,8 +37,11 @@ namespace Pedidos
 
             //Injeção de dependencia de UseCases products
 
+            services.AddTransient<ICreateProductUseCase, CreateProductUseCase>();
             services.AddTransient<IGetProductsUseCase, GetProductsUseCase>();
-
+            services.AddTransient<IUpdateProductUseCase, UpdateProductUseCase>();
+            services.AddTransient<IDeleteProductUseCase, DeleteProductUseCase>();
+            
             //Injeção de dependencia de DAO
             services.AddTransient<IPedidoDAO, PedidoDAO>();
             services.AddTransient<IProductDAO, ProductDAO>();
@@ -48,7 +52,7 @@ namespace Pedidos
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "FastOrd", Version = "v1" });
             });
-
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -67,6 +71,13 @@ namespace Pedidos
             });
 
             app.UseRouting();
+
+            // global cors policy
+            app.UseCors(x => x
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+                .SetIsOriginAllowed(origin => true) // allow any origin
+                .AllowCredentials()); // allow credentials
 
             app.UseAuthorization();
 
