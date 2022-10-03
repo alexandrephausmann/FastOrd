@@ -18,6 +18,11 @@ namespace Pedidos.UseCase.Products
             return _productDAO.GetProducts();
         }
 
+        public TbProduct GetProductById(int id)
+        {
+            return _productDAO.GetProductById(id);
+        }
+
         public void CreateProduct(TbProduct product)
         {
             _productDAO.CreateProduct(product);

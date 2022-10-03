@@ -29,6 +29,17 @@ namespace Pedidos.Dados
             return products;
         }
 
+        public TbProduct GetProductById(int id)
+        {
+            var product = new TbProduct();
+
+            using (var db = new FastOrderContext(_configuracao))
+            {
+                product = db.TbProduct.Where(prod => prod.CodProduct == id).FirstOrDefault();
+            }
+            return product;
+        }
+
         public void CreateProduct(TbProduct product)
         {
             using (var db = new FastOrderContext(_configuracao))

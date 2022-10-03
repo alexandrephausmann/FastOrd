@@ -74,6 +74,26 @@ namespace Pedidos.Controllers
             }           
         }
 
+        [Route("{id:int}")]
+        [HttpGet]
+        public IActionResult GetProductById(int id)
+        {
+            try
+            {
+                var product = _getProductsUseCase.GetProductById(id);
+
+                if (product == null) return NotFound();
+
+                return Ok(product);
+                
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Error to get products: {0}", ex.Message);
+                return BadRequest($"Error to get products: {ex.Message}");
+            }
+        }
+
         [Route("")]
         [HttpPut]
         public IActionResult UpdateProduct([FromBody] ProductRequest productRequest)
@@ -91,13 +111,13 @@ namespace Pedidos.Controllers
             }
         }
 
-        [Route("")]
+        [Route("{id:int}")]
         [HttpDelete]
-        public IActionResult DeleteProduct([FromBody] ProductRequest productRequest)
+        public IActionResult DeleteProduct(int id)
         {
             try
             {
-                _deleteProductUseCase.DeleteProduct((int)productRequest.CodProduct);
+                _deleteProductUseCase.DeleteProduct(id);
                 return Ok();
             }
             catch (Exception ex)

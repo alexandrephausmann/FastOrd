@@ -35,12 +35,12 @@ import { OrdersPanelComponent } from './views/orders-panel/orders-panel.componen
 import { ProductCreateComponent } from './components/product/product-create/product-create.component';
 import { HeaderComponent } from './components/template/header/header.component';
 import { ProductReadComponent } from './components/product/product-read/product-read.component';
-import { ProductDeleteComponent } from './components/product/product-delete/product-delete.component';
 import { ProductUpdateComponent } from './components/product/product-update/product-update.component';
 import { HttpClientModule } from '@angular/common/http';
 
 import localePt from '@angular/common/locales/pt';
 import { registerLocaleData } from '@angular/common';
+import { DialogComponent } from './components/common/dialog/dialog.component';
 
 registerLocaleData(localePt);
 
@@ -59,8 +59,8 @@ registerLocaleData(localePt);
     OrdersPanelComponent,
     ProductCreateComponent,
     ProductReadComponent,
-    ProductDeleteComponent,
-    ProductUpdateComponent
+    ProductUpdateComponent,
+    DialogComponent
   ],
   imports: [
     BrowserModule,

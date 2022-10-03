@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../product.model';
 import { ProductService } from '../product.service';
+import swal from 'sweetalert2';
 
 @Component({
   selector: 'app-product-read',
@@ -9,26 +10,48 @@ import { ProductService } from '../product.service';
 })
 export class ProductReadComponent implements OnInit {
 
-  products: any[] = [];
+  products: Product[] = [];
 
   displayedColumns = ['codProduct', 'description', 'productValue', 'action']
 
-  constructor(private productService: ProductService) { }
+  constructor(private productService: ProductService) {
+  }
 
   ngOnInit(): void {
     this.productService.read().subscribe(response => {
-
-      /* products.forEach(element => {
-         this.products = [{ codProduct: element.codProduct, descProduct: element.descProduct, productValue: element.productValue }];
-         console.log(`Id: ${element.codProduct} - Name ${element.descProduct} product ${element.productValue}`);
-       })*/
-
-      //this.products.push({ codProduct: 1, descProduct: "teste", productValue: 123 })
       this.products = response;
       console.log(response);
-      //console.log(products.toString());
     })
-    //this.products.push({ codProduct: 1, descProduct: "teste", productValue: 123 });
   }
 
+  deleteProduct(id: number) {
+    swal.fire({
+      title: 'Are you sure want to remove?',
+      text: 'You will not be able to recover this product!',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Yes, delete it!',
+      cancelButtonText: 'No, keep it'
+    }).then((result) => {
+      if (result.value) {
+        this.productService.delete(id).subscribe((data) => {
+          const productIndex = this.products.findIndex(item => item.codProduct === id);
+          this.products.splice(productIndex, 1);
+          this.products = [...this.products];
+          this.productService.showMessage("Product deleted!");
+        });
+        swal.fire(
+          'Deleted!',
+          'The product was deleted sucessfully!.',
+          'success'
+        )
+      } else if (result.dismiss === swal.DismissReason.cancel) {
+        swal.fire(
+          'Cancelled',
+          'Your product is safe :)',
+          'error'
+        )
+      }
+    })
+  }
 }

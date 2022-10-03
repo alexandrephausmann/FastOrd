@@ -1,5 +1,6 @@
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 <div class="mat-elevation-z4">
-        <table mat-table [dataSource]="products">
+        <table mat-table [dataSource]="products" class="form">
                 <!-- Id Column -->
                 <ng-container matColumnDef="codProduct">
                         <th mat-header-cell *matHeaderCellDef>Id</th>
@@ -27,7 +28,8 @@
                                                 edit
                                         </i>
                                 </a>
-                                <a routerLink="/products/delete/{{row.codProduct}}">
+
+                                <a (click)="deleteProduct(row.codProduct)" class="button-delete">
                                         <i class="material-icons delete">
                                                 delete
                                         </i>

@@ -16,7 +16,6 @@ export class HeaderComponent implements OnInit {
   }
 
   toggle() {
-
     this.opened = !this.opened;
     this.menuToggle.emit(this.opened);
   }

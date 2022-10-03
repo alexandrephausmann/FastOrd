@@ -1,3 +1,9 @@
-<app-header [opened]="menuOpened" (menuToggle)="setMenuState($event)"></app-header>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+<app-header (menuToggle)="setMenuState($event)"></app-header>
 <app-nav *ngIf="menuOpened"></app-nav>
+
+<div *ngIf="!menuOpened" class="content">
+        <router-outlet></router-outlet>
+</div>
+
 <app-footer></app-footer>

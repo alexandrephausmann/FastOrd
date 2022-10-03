@@ -1,5 +1,6 @@
 .cancel {
         background-color: red;
+        color: white;
         margin-left: 10px;
 }
 
@@ -8,17 +9,24 @@ form {
         flex-direction: column;
 }
 
-
-
 table {
         width: 100%;
 }
 
+.button-delete {
+        cursor: pointer;
+}
+
 .edit {
-        color: yellow;
+        color: black;
         margin-right: 15px;
 }
 
 .delete {
-        color: red;
+        color: red !important;
+}
+
+.create {
+        color: white;
+        background-color: #7abed1;
 }
