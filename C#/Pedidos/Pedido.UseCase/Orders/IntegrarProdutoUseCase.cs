@@ -16,21 +16,21 @@ namespace Pedidos.UseCase.Orders
             _pedidoDAO = pedidoDAO;
         }
 
-        public void RecuperarCodigoProdutoFastOrder(CodTipoIntegracao codTipoIntegracao, List<TbItemPedido> itensPedido)
+        public void RecuperarCodigoProdutoFastOrder(CodTipoIntegracao codTipoIntegracao, List<TbOrderItem> itensPedido)
         {
             var relacaoCodigoExternoFastOrder = _pedidoDAO.RecuperarCodigoProdutoFastOrder(codTipoIntegracao);
 
-            foreach (TbItemPedido itemPedido in itensPedido)
+            foreach (TbOrderItem itemPedido in itensPedido)
             {
-                var produto = relacaoCodigoExternoFastOrder.Find(prod => prod.CodProdutoExterno == itemPedido.CodProduto);
+                var produto = relacaoCodigoExternoFastOrder.Find(prod => prod.IdExternalProduct == itemPedido.CodProduct);
 
                 if (produto != null)
                 {
-                    itemPedido.CodProduto = produto.CodProdutoFastorder;
+                    itemPedido.CodProduct = produto.IdProductFastorder;
                 }
                 else
                 {
-                    throw new Exception($"O código de produto {itemPedido.CodProduto} não está mapeado no sistema.");
+                    throw new Exception($"O código de produto {itemPedido.CodProduct} não está mapeado no sistema.");
                 }
             }
         }

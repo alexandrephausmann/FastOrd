@@ -18,34 +18,34 @@ namespace Pedidos.Dados
             _configuracao = configuracao;
         }
 
-        public int InserirPedido(TbPedido pedido)
+        public int InserirPedido(TbOrder pedido)
         {
             int codPedido = 0;
             using (var db = new FastOrderContext(_configuracao))
             {
-                db.TbPedido.Add(pedido);
+                db.TbOrder.Add(pedido);
                 db.SaveChanges();
-                codPedido = pedido.CodPedido;
+                codPedido = pedido.IdOrder;
             }
             return codPedido;
         }
 
-        public void InserirItensPedido(List<TbItemPedido> itensPedido)
+        public void InserirItensPedido(List<TbOrderItem> itensPedido)
         {
             using (var db = new FastOrderContext(_configuracao))
             {
-                db.TbItemPedido.AddRange(itensPedido);
+                db.TbOrderItem.AddRange(itensPedido);
                 db.SaveChanges();
             }
         }
 
-        public List<TbProdutoIntegracao> RecuperarCodigoProdutoFastOrder(CodTipoIntegracao codTipoIntegracao)
+        public List<TbIntegrationProduct> RecuperarCodigoProdutoFastOrder(CodTipoIntegracao codTipoIntegracao)
         {
-            var relacaoCodigoExternoFastOrder = new List<TbProdutoIntegracao>();
+            var relacaoCodigoExternoFastOrder = new List<TbIntegrationProduct>();
 
             using (var db = new FastOrderContext(_configuracao))
             {
-                relacaoCodigoExternoFastOrder = db.TbProdutoIntegracao.Where(prod => prod.CodTipoIntegracao == (int?)codTipoIntegracao).ToList();
+                relacaoCodigoExternoFastOrder = db.TbIntegrationProduct.Where(prod => prod.IdIntegrationType == (int?)codTipoIntegracao).ToList();
             }
             return relacaoCodigoExternoFastOrder;
         }
@@ -56,30 +56,30 @@ namespace Pedidos.Dados
 
             using (var db = new FastOrderContext(_configuracao))
             {
-                var pedidos = (from pedido in db.TbPedido
-                               join itPedido in db.TbItemPedido
-                               on pedido.CodPedido equals itPedido.CodPedido
-                               join stsPedido in db.TbStatusPedido
-                               on pedido.CodStatusPedido equals stsPedido.CodStatusPedido
+                var pedidos = (from pedido in db.TbOrder
+                               join itPedido in db.TbOrderItem
+                               on pedido.IdOrder equals itPedido.IdOrder
+                               join stsPedido in db.TbOrderStatus
+                               on pedido.IdOrderStatus equals stsPedido.IdOrderStatus
                                join produto in db.TbProduct
-                               on itPedido.CodProduto equals produto.CodProduct
-                               join integraProduto in db.TbTipoIntegracao
-                               on pedido.CodTipoIntegracao equals integraProduto.CodTipoIntegracao
-                               where stsPedido.CodStatusPedido == (int)codStatusPedido
+                               on itPedido.CodProduct equals produto.CodProduct
+                               join integraProduto in db.TbIntegrationType
+                               on pedido.IdIntegrationType equals integraProduto.IdIntegrationType
+                               where stsPedido.IdOrderStatus == (int)codStatusPedido
                                select new Pedido
                                {
-                                  CodPedido = pedido.CodPedido,
-                                  Retirada = pedido.Retirada,
-                                  CodStatusPedido = (CodStatusPedido)stsPedido.CodStatusPedido,
-                                  DescStatusPedido = stsPedido.DescStatusPedido,
-                                  CodTipoIntegracao = (CodTipoIntegracao)stsPedido.CodStatusPedido,
-                                  DescTipoIntegracao = integraProduto.DescTipoIntegracao,
-                                  Bairro = pedido.Bairro,
-                                  Cep = pedido.Cep,
-                                  Rua = pedido.Rua,
-                                  NumResidencia = pedido.NumResidencia,
-                                  DadoComplementar = pedido.DadoComplementar,
-                                  NumCelular = pedido.NumCelular
+                                  CodPedido = pedido.IdOrder,
+                                  Retirada = pedido.Withdrawal,
+                                  CodStatusPedido = (CodStatusPedido)stsPedido.IdOrderStatus,
+                                  DescStatusPedido = stsPedido.DescOrderStatus,
+                                  CodTipoIntegracao = (CodTipoIntegracao)stsPedido.IdOrderStatus,
+                                  DescTipoIntegracao = integraProduto.DescIntegrationType,
+                                  Bairro = pedido.District,
+                                  Cep = pedido.ZipCode,
+                                  Rua = pedido.Road,
+                                  NumResidencia = pedido.HouseNumber,
+                                  DadoComplementar = pedido.ComplementaryData,
+                                  NumCelular = pedido.MobileNumber
                                }
                               ).ToList();
 
@@ -89,15 +89,15 @@ namespace Pedidos.Dados
                 foreach(int codigoPedido in pedidosRetorno.CodigosPedidos)
                 {
                     var pedidoItem = new PedidosItens();
-                    var itensPedidos = (from itemPedido in db.TbItemPedido
+                    var itensPedidos = (from itemPedido in db.TbOrderItem
                                        join produto in db.TbProduct
-                                       on itemPedido.CodProduto equals produto.CodProduct
-                                        where itemPedido.CodPedido == codigoPedido
+                                       on itemPedido.CodProduct equals produto.CodProduct
+                                        where itemPedido.IdOrder == codigoPedido
                                        select new ItemPedido
                                        {
-                                           CodItemPedido = itemPedido.CodItemPedido,
-                                           CodPedido = itemPedido.CodPedido,
-                                           Quantidade = (int)itemPedido.Quantidade,
+                                           CodItemPedido = itemPedido.IdOrderItem,
+                                           CodPedido = itemPedido.IdOrder,
+                                           Quantidade = (int)itemPedido.Quantity,
                                            CodProduto = (int)produto.CodProduct,
                                            DescProduto = produto.DescProduct
                                        }).ToList();    

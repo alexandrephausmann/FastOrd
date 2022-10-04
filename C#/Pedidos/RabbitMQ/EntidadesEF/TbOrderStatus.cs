@@ -5,10 +5,10 @@ using System.Collections.Generic;
 
 namespace Pedidos.Domain.EntidadesEF
 {
-    public partial class TbProduct
+    public partial class TbOrderStatus
     {
-        public int? CodProduct { get; set; }
-        public string DescProduct { get; set; }
-        public double? ProductValue { get; set; }
+        public int IdOrderStatus { get; set; }
+        public string DescOrderStatus { get; set; }
+
     }
 }

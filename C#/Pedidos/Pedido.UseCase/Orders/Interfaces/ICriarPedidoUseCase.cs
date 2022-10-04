@@ -6,6 +6,6 @@ namespace Pedidos.UseCase.Orders.Interfaces
 {
     public interface ICriarPedidoUseCase
     {
-        void CriarPedido(TbPedido pedido, List<TbItemPedido> itemPedido);         
+        void CriarPedido(TbOrder pedido, List<TbOrderItem> itemPedido);         
     }
 }

@@ -6,6 +6,6 @@ namespace Pedidos.UseCase.Orders.Interfaces
 {
     public interface IIntegrarProdutoUseCase
     {
-        void RecuperarCodigoProdutoFastOrder(CodTipoIntegracao codTipoIntegracao, List<TbItemPedido> itensPedido);
+        void RecuperarCodigoProdutoFastOrder(CodTipoIntegracao codTipoIntegracao, List<TbOrderItem> itensPedido);
     }
 }

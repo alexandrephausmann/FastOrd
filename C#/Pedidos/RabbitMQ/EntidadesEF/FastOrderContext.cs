@@ -23,12 +23,12 @@ namespace Pedidos.Domain.EntidadesEF
         {
         }
 
-        public virtual DbSet<TbItemPedido> TbItemPedido { get; set; }
-        public virtual DbSet<TbPedido> TbPedido { get; set; }
+        public virtual DbSet<TbOrderItem> TbOrderItem { get; set; }
+        public virtual DbSet<TbOrder> TbOrder { get; set; }
         public virtual DbSet<TbProduct> TbProduct { get; set; }
-        public virtual DbSet<TbProdutoIntegracao> TbProdutoIntegracao { get; set; }
-        public virtual DbSet<TbStatusPedido> TbStatusPedido { get; set; }
-        public virtual DbSet<TbTipoIntegracao> TbTipoIntegracao { get; set; }
+        public virtual DbSet<TbIntegrationProduct> TbIntegrationProduct { get; set; }
+        public virtual DbSet<TbOrderStatus> TbOrderStatus { get; set; }
+        public virtual DbSet<TbIntegrationType> TbIntegrationType { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -43,81 +43,72 @@ namespace Pedidos.Domain.EntidadesEF
         {
             modelBuilder.HasAnnotation("Relational:Collation", "Latin1_General_CI_AS");
 
-            modelBuilder.Entity<TbItemPedido>(entity =>
+            modelBuilder.Entity<TbOrderItem>(entity =>
             {
-                entity.HasKey(e => new { e.CodPedido, e.CodItemPedido })
-                    .HasName("PK__TB_ITEM___391D2585A3052C65");
+                entity.HasKey(e => new { e.IdOrder, e.IdOrderItem })
+                    .HasName("PK__ORDEM_I___391D2585A3052C65");
 
-                entity.ToTable("TB_ITEM_PEDIDO");
+                entity.ToTable("TB_ORDEM_ITEM");
 
-                entity.Property(e => e.CodPedido).HasColumnName("COD_PEDIDO");
+                entity.Property(e => e.IdOrder).HasColumnName("ID_ORDER");
 
-                entity.Property(e => e.CodItemPedido).HasColumnName("COD_ITEM_PEDIDO");
+                entity.Property(e => e.IdOrderItem).HasColumnName("ID_ORDEM_ITEM");
 
-                entity.Property(e => e.CodProduto).HasColumnName("COD_PRODUTO");
+                entity.Property(e => e.CodProduct).HasColumnName("COD_PRODUCT");
 
-                entity.Property(e => e.Quantidade).HasColumnName("QUANTIDADE");
+                entity.Property(e => e.Quantity).HasColumnName("QUANTITY");
 
-                entity.HasOne(d => d.CodProdutoNavigation)
-                    .WithMany(p => p.TbItemPedido)
-                    .HasForeignKey(d => d.CodProduto)
-                    .HasConstraintName("FK__TB_ITEM_P__COD_P__59FA5E80");
             });
 
-            modelBuilder.Entity<TbPedido>(entity =>
+            modelBuilder.Entity<TbOrder>(entity =>
             {
-                entity.HasKey(e => e.CodPedido)
-                    .HasName("PK__TB_PEDID__302BFB8001D147DB");
+                entity.HasKey(e => e.IdOrder)
+                    .HasName("PK__TB_ORDER__302BFB8001D147DB");
 
-                entity.ToTable("TB_PEDIDO");
+                entity.ToTable("TB_ORDER");
 
-                entity.Property(e => e.CodPedido).HasColumnName("COD_PEDIDO");
+                entity.Property(e => e.IdOrder).HasColumnName("ID_ORDER");
 
-                entity.Property(e => e.Bairro)
+                entity.Property(e => e.District)
                     .HasMaxLength(255)
                     .IsUnicode(false)
-                    .HasColumnName("BAIRRO");
+                    .HasColumnName("DISTRICT");
 
-                entity.Property(e => e.Cep)
+                entity.Property(e => e.ZipCode)
                     .HasMaxLength(15)
                     .IsUnicode(false)
-                    .HasColumnName("CEP");
+                    .HasColumnName("ZIP_CODE");
 
-                entity.Property(e => e.CodStatusPedido).HasColumnName("COD_STATUS_PEDIDO");
+                entity.Property(e => e.IdOrderStatus).HasColumnName("ID_ORDER_STATUS");
 
-                entity.Property(e => e.CodTipoIntegracao).HasColumnName("COD_TIPO_INTEGRACAO");
+                entity.Property(e => e.IdIntegrationType).HasColumnName("ID_INTEGRATION_TYPE");
 
-                entity.Property(e => e.DadoComplementar)
+                entity.Property(e => e.ComplementaryData)
                     .HasMaxLength(255)
                     .IsUnicode(false)
-                    .HasColumnName("DADO_COMPLEMENTAR");
+                    .HasColumnName("COMPLEMENTARY_DATA");
 
-                entity.Property(e => e.NumCelular)
+                entity.Property(e => e.MobileNumber)
                     .HasMaxLength(15)
                     .IsUnicode(false)
-                    .HasColumnName("NUM_CELULAR");
+                    .HasColumnName("MOBILE_NUMBER");
 
-                entity.Property(e => e.NumResidencia).HasColumnName("NUM_RESIDENCIA");
+                entity.Property(e => e.HouseNumber).HasColumnName("HOUSE_NUMBER");
 
-                entity.Property(e => e.Retirada)
+                entity.Property(e => e.Withdrawal)
                     .HasMaxLength(1)
                     .IsUnicode(false)
-                    .HasColumnName("RETIRADA");
+                    .HasColumnName("WITHDRAWAL");
 
-                entity.Property(e => e.Rua)
+                entity.Property(e => e.Road)
                     .HasMaxLength(255)
                     .IsUnicode(false)
-                    .HasColumnName("RUA");
+                    .HasColumnName("ROAD");
 
-                entity.HasOne(d => d.CodStatusPedidoNavigation)
-                    .WithMany(p => p.TbPedido)
-                    .HasForeignKey(d => d.CodStatusPedido)
-                    .HasConstraintName("FK__TB_PEDIDO__COD_S__571DF1D5");
-
-                entity.HasOne(d => d.CodTipoIntegracaoNavigation)
-                    .WithMany(p => p.TbPedido)
-                    .HasForeignKey(d => d.CodTipoIntegracao)
-                    .HasConstraintName("FK__TB_PEDIDO__COD_T__5629CD9C");
+                entity.HasOne(d => d.IdIntegrationTypeNavigation)
+                    .WithMany(p => p.TbOrder)
+                    .HasForeignKey(d => d.IdIntegrationType)
+                    .HasConstraintName("FK__TB_ORDER__COD_T__5629CD9C");
             });
 
             modelBuilder.Entity<TbProduct>(entity =>
@@ -137,59 +128,48 @@ namespace Pedidos.Domain.EntidadesEF
                 entity.Property(e => e.ProductValue).HasColumnName("PRODUCT_VALUE");
             });
 
-            modelBuilder.Entity<TbProdutoIntegracao>(entity =>
+            modelBuilder.Entity<TbIntegrationProduct>(entity =>
             {
-                entity.HasKey(e => new { e.CodProdutoFastorder, e.CodProdutoExterno })
-                    .HasName("PK__TB_PRODU__16241E49A05B3575");
+                entity.HasKey(e => new { e.IdProductFastorder, e.IdExternalProduct })
+                    .HasName("PK__TB_INTEG__16241E49A05B3575");
 
-                entity.ToTable("TB_PRODUTO_INTEGRACAO");
+                entity.ToTable("TB_INTEGRATION_PRODUCT");
 
-                entity.Property(e => e.CodProdutoFastorder).HasColumnName("COD_PRODUTO_FASTORDER");
+                entity.Property(e => e.IdProductFastorder).HasColumnName("ID_PRODUCT_FASTORDER");
 
-                entity.Property(e => e.CodProdutoExterno).HasColumnName("COD_PRODUTO_EXTERNO");
+                entity.Property(e => e.IdExternalProduct).HasColumnName("ID_EXTERNAL_PRODUCT");
 
-                entity.Property(e => e.CodTipoIntegracao).HasColumnName("COD_TIPO_INTEGRACAO");
-
-                entity.HasOne(d => d.CodProdutoFastorderNavigation)
-                    .WithMany(p => p.TbProdutoIntegracao)
-                    .HasForeignKey(d => d.CodProdutoFastorder)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__TB_PRODUT__COD_P__5070F446");
-
-                entity.HasOne(d => d.CodTipoIntegracaoNavigation)
-                    .WithMany(p => p.TbProdutoIntegracao)
-                    .HasForeignKey(d => d.CodTipoIntegracao)
-                    .HasConstraintName("FK__TB_PRODUT__COD_T__5165187F");
+                entity.Property(e => e.IdIntegrationType).HasColumnName("ID_INTEGRATION_TYPE");
             });
 
-            modelBuilder.Entity<TbStatusPedido>(entity =>
+            modelBuilder.Entity<TbOrderStatus>(entity =>
             {
-                entity.HasKey(e => e.CodStatusPedido)
-                    .HasName("PK__TB_STATU__F8783C0BA4925CD6");
+                entity.HasKey(e => e.IdOrderStatus)
+                    .HasName("PK__TB_ORDER__F8783C0BA4925CD6");
 
-                entity.ToTable("TB_STATUS_PEDIDO");
+                entity.ToTable("TB_ORDER_STATUS");
 
-                entity.Property(e => e.CodStatusPedido).HasColumnName("COD_STATUS_PEDIDO");
+                entity.Property(e => e.IdOrderStatus).HasColumnName("ID_ORDER_STATUS");
 
-                entity.Property(e => e.DescStatusPedido)
+                entity.Property(e => e.DescOrderStatus)
                     .HasMaxLength(255)
                     .IsUnicode(false)
-                    .HasColumnName("DESC_STATUS_PEDIDO");
+                    .HasColumnName("DESC_ORDER_STATUS");
             });
 
-            modelBuilder.Entity<TbTipoIntegracao>(entity =>
+            modelBuilder.Entity<TbIntegrationType>(entity =>
             {
-                entity.HasKey(e => e.CodTipoIntegracao)
+                entity.HasKey(e => e.IdIntegrationType)
                     .HasName("PK__TB_TIPO___E7CCB0D693C39163");
 
-                entity.ToTable("TB_TIPO_INTEGRACAO");
+                entity.ToTable("TB_INTEGRATION_TYPE");
 
-                entity.Property(e => e.CodTipoIntegracao).HasColumnName("COD_TIPO_INTEGRACAO");
+                entity.Property(e => e.IdIntegrationType).HasColumnName("ID_INTEGRATION_TYPE");
 
-                entity.Property(e => e.DescTipoIntegracao)
+                entity.Property(e => e.DescIntegrationType)
                     .HasMaxLength(255)
                     .IsUnicode(false)
-                    .HasColumnName("DESC_TIPO_INTEGRACAO");
+                    .HasColumnName("DESC_INTEGRATION_TYPE");
             });
 
             OnModelCreatingPartial(modelBuilder);

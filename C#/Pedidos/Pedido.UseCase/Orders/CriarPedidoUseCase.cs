@@ -16,34 +16,34 @@ namespace Pedidos.UseCase.Orders
             _pedidoDAO = pedidoDAO;
             _integrarProdutoUseCase = integrarProdutoUseCase;
         }
-        public void CriarPedido(TbPedido pedido,List<TbItemPedido> itensPedido)
+        public void CriarPedido(TbOrder pedido,List<TbOrderItem> itensPedido)
         {        
             using (TransactionScope scope = new TransactionScope())
             {
                 InserirPedido(pedido);
-                if (pedido.CodTipoIntegracao == (int)CodTipoIntegracao.Ifood)
+                if (pedido.IdIntegrationType == (int)CodTipoIntegracao.Ifood)
                     _integrarProdutoUseCase.RecuperarCodigoProdutoFastOrder(CodTipoIntegracao.Ifood,itensPedido);
-                InserirItensPedido(itensPedido, pedido.CodPedido);
+                InserirItensPedido(itensPedido, pedido.IdOrder);
                 scope.Complete();
             }            
         }
-        private void InserirPedido(TbPedido pedido)
+        private void InserirPedido(TbOrder pedido)
         {
-            if (pedido.CodTipoIntegracao == null)
-                pedido.CodTipoIntegracao = (int)CodTipoIntegracao.SemIntegracao;
+            if (pedido.IdIntegrationType == null)
+                pedido.IdIntegrationType = (int)CodTipoIntegracao.SemIntegracao;
 
-            if (pedido.CodStatusPedido == null)
-                pedido.CodStatusPedido = (int)CodStatusPedido.Realizado;
+            if (pedido.IdOrderStatus == null)
+                pedido.IdOrderStatus = (int)CodStatusPedido.Realizado;
 
-            pedido.CodPedido = _pedidoDAO.InserirPedido(pedido); 
+            pedido.IdOrder = _pedidoDAO.InserirPedido(pedido); 
         }
 
-        private void InserirItensPedido(List<TbItemPedido> itensPedido,int codigoPedido)
+        private void InserirItensPedido(List<TbOrderItem> itensPedido,int codigoPedido)
         {
             for (int i = 0; i < itensPedido.Count; i++)
              {
-                 itensPedido[i].CodItemPedido = i + 1;
-                 itensPedido[i].CodPedido = codigoPedido;
+                 itensPedido[i].IdOrderItem = i + 1;
+                 itensPedido[i].IdOrder = codigoPedido;
              }
             _pedidoDAO.InserirItensPedido(itensPedido);
         }

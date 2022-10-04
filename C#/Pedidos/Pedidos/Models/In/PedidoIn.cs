@@ -6,7 +6,7 @@ namespace Pedidos.Models.In
 {
     public class PedidoIn
     {
-        public TbPedido Pedido { get; set; }
-        public List<TbItemPedido> ItensPedido { get; set; }
+        public TbOrder Pedido { get; set; }
+        public List<TbOrderItem> ItensPedido { get; set; }
     }
 }

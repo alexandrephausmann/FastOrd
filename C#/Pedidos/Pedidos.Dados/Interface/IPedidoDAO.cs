@@ -8,9 +8,9 @@ namespace Pedidos.Dados.Interface
 {
     public interface IPedidoDAO
     {
-        int InserirPedido(TbPedido pedido);
-        void InserirItensPedido(List<TbItemPedido> itensPedido);
-        List<TbProdutoIntegracao> RecuperarCodigoProdutoFastOrder(CodTipoIntegracao codTipoIntegracao);
+        int InserirPedido(TbOrder pedido);
+        void InserirItensPedido(List<TbOrderItem> itensPedido);
+        List<TbIntegrationProduct> RecuperarCodigoProdutoFastOrder(CodTipoIntegracao codTipoIntegracao);
         PedidosRetorno ConsultarPedidos(CodStatusPedido codStatusPedido);
     }
 }
