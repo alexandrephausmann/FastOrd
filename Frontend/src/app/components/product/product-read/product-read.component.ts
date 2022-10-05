@@ -38,13 +38,12 @@ export class ProductReadComponent implements OnInit {
           const productIndex = this.products.findIndex(item => item.codProduct === id);
           this.products.splice(productIndex, 1);
           this.products = [...this.products];
-          this.productService.showMessage("Product deleted!");
+          swal.fire(
+            'Deleted!',
+            'The product was deleted sucessfully!.',
+            'success'
+          )
         });
-        swal.fire(
-          'Deleted!',
-          'The product was deleted sucessfully!.',
-          'success'
-        )
       } else if (result.dismiss === swal.DismissReason.cancel) {
         swal.fire(
           'Cancelled',

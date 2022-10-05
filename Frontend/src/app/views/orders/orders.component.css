@@ -1,0 +1,21 @@
+button {
+        margin-bottom: 30px;
+}
+
+.grid1 {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 25px;
+        height: 100%;
+        /* the above lets us know that there is two columns, in the responsive you would keep this the same but change it to have only one auto for one column if that is what you want */
+}
+
+
+
+@media (max-width: 1000px) {
+
+        .grid1 {
+                grid-template-columns: repeat(2, 1fr);
+                /* the above lets us know that there is two columns, in the responsive you would keep this the same but change it to have only one auto for one column if that is what you want */
+        }
+}

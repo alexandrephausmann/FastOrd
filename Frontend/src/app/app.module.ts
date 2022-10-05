@@ -16,13 +16,14 @@ import localePt from '@angular/common/locales/pt';
 import { registerLocaleData } from '@angular/common';
 import { ProductModule } from './modules/product.module';
 import { TemplateModule } from './modules/template.module';
+import { OrderModule } from './modules/order.module';
+
 
 registerLocaleData(localePt);
 
 @NgModule({
   declarations: [
     AppComponent,
-    OrdersComponent,
     ExternalOrdersComponent,
     KitchenOrdersComponent,
     OrdersPanelComponent
@@ -33,7 +34,8 @@ registerLocaleData(localePt);
     HttpClientModule,
     BrowserAnimationsModule,
     ProductModule,
-    TemplateModule
+    TemplateModule,
+    OrderModule
   ],
   providers: [],
   bootstrap: [AppComponent]

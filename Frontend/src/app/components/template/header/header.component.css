@@ -7,3 +7,12 @@ i {
         display: flex;
         align-items: center;
 }
+
+
+@media (max-width: 599px) {
+
+        .header {
+                height: 64px;
+                /* the above lets us know that there is two columns, in the responsive you would keep this the same but change it to have only one auto for one column if that is what you want */
+        }
+}

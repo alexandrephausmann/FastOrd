@@ -46,7 +46,7 @@ import { ProductRoutingModule } from '../components/product/product-routing.modu
     HttpClientModule,
     MatButtonModule,
     MatMenuModule,
-    AppRoutingModule,
+    //AppRoutingModule,
     ProductRoutingModule
   ],
   exports: [

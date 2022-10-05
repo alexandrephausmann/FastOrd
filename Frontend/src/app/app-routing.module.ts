@@ -15,10 +15,6 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
-    path: "orders",
-    component: OrdersComponent
-  },
-  {
     path: "externalOrders",
     component: ExternalOrdersComponent
   },
