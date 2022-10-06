@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-order-card',
@@ -8,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 export class OrderCardComponent implements OnInit {
 
   panelOpenState: boolean = false;
+
+  @Input()
+  order: any;
+
+  @Input()
+  orderItens: any;
+
   constructor() { }
 
   ngOnInit(): void {
+    console.log("order " + this.order.codPedido);
+    console.log("orderItens " + this.orderItens.length);
   }
 
 }

@@ -1,12 +1,6 @@
 <section>
         <div class="grid1">
-                <app-order-card></app-order-card>
-                <app-order-card></app-order-card>
-                <app-order-card></app-order-card>
-                <app-order-card></app-order-card>
-                <app-order-card></app-order-card>
-                <app-order-card></app-order-card>
-                <app-order-card></app-order-card>
-                <app-order-card></app-order-card>
+                <app-order-card *ngFor="let order of orders.pedidosRetorno?.pedidosItens" [order]="order.pedido"
+                        [orderItens]="order.itensPedido"></app-order-card>
         </div>
 </section>
