@@ -19,13 +19,15 @@ import { OrderReadComponent } from '../components/orders/order-read/order-read.c
 import { OrderRoutingModule } from '../components/orders/order-routing.module';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { OrderCardComponent } from '../components/orders/order-card/order-card.component';
 
 
 @NgModule({
   declarations: [
     OrderCreateComponent,
     OrderReadComponent,
-    OrdersComponent
+    OrdersComponent,
+    OrderCardComponent
   ],
   imports: [
     CommonModule,

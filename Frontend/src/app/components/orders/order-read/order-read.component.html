@@ -1,46 +1,12 @@
-<mat-card class="example-card">
-        <mat-card-title>Order Number: </mat-card-title>
-        <mat-accordion>
-                <mat-expansion-panel>
-                        <mat-expansion-panel-header>
-                                <mat-panel-title>
-                                        Order Item:
-                                </mat-panel-title>
-                                <mat-panel-description>
-                                        Product: Quantity:
-                                </mat-panel-description>
-                        </mat-expansion-panel-header>
-                        <p>IdProduct: Product: Quantity: Total Price: </p>
-                </mat-expansion-panel>
-                <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
-                        <mat-expansion-panel-header>
-                                <mat-panel-title>
-                                        Order Item:
-                                </mat-panel-title>
-                                <mat-panel-description>
-                                        Product: Quantity:
-                                </mat-panel-description>
-                        </mat-expansion-panel-header>
-                        <p>IdProduct: Product: Quantity: Total Price: </p>
-                </mat-expansion-panel>
-        </mat-accordion>
-        <mat-divider inset></mat-divider>
-        <div class="row total">
-                <p class="status column bold">
-                        Status:
-                </p>
-                <p class="total-value column bold">
-                        Total:
-                </p>
+<section>
+        <div class="grid1">
+                <app-order-card></app-order-card>
+                <app-order-card></app-order-card>
+                <app-order-card></app-order-card>
+                <app-order-card></app-order-card>
+                <app-order-card></app-order-card>
+                <app-order-card></app-order-card>
+                <app-order-card></app-order-card>
+                <app-order-card></app-order-card>
         </div>
-        <mat-card-actions>
-                <div class="row">
-                        <button mat-button class="column action cancel">Move to Canceled</button>
-                        <button mat-button class="column action progress">Move to In progress</button>
-                </div>
-                <div class="row bottom">
-                        <button mat-button class="column action take-away">Move to Ready to pick up</button>
-                        <button mat-button class="column action done">Move to Done</button>
-                </div>
-        </mat-card-actions>
-</mat-card>
+</section>

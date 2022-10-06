@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { OrderService } from '../order.service';
 
 @Component({
   selector: 'app-order-read',
@@ -7,11 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OrderReadComponent implements OnInit {
 
-  panelOpenState: boolean = false;
+  orders: any;
 
-  constructor() { }
+  constructor(private orderService: OrderService) { }
 
   ngOnInit(): void {
+    this.orderService.read().subscribe(response => {
+      this.orders = response;
+      console.log(response);
+    })
   }
 
 }

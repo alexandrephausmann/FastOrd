@@ -12,17 +12,17 @@ namespace Pedidos.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class PedidoController : ControllerBase
+    public class OrderController : ControllerBase
     {
-        private readonly ILogger<PedidoController> _logger;
+        private readonly ILogger<OrderController> _logger;
         private readonly ICriarPedidoUseCase _criarPedidoUseCase;
         private readonly IConsultarPedidosUseCase _consultarPedidosUseCase;
         private readonly IEnviarMensagemRabbitUseCase _enviarMensagemRabbitUseCase;
         private readonly IMapper _mapper;
 
-        public PedidoController
+        public OrderController
         (
-            ILogger<PedidoController> logger, 
+            ILogger<OrderController> logger, 
             ICriarPedidoUseCase enviarPedidoUseCase,
             IConsultarPedidosUseCase consultarPedidosUseCase,
             IEnviarMensagemRabbitUseCase enviarMensagemRabbitUseCase,
@@ -36,7 +36,7 @@ namespace Pedidos.Controllers
             _mapper = mapper;
         }
 
-        [Route("api/GerarPedido")]
+        [Route("")]
         [HttpPost]
         public IActionResult GerarPedido([FromBody]PedidoRequest pedidoRequest)
         {
@@ -55,14 +55,30 @@ namespace Pedidos.Controllers
                       
         }
 
-        [Route("api/ConsultarPedidos")]
+        [Route("")]
         [HttpGet]
-        public IActionResult ConsultarPedidos([FromQuery(Name = "codStatusPedido")] CodStatusPedido codStatusPedido)
+        public IActionResult GetOrders()
+        {
+            try
+            {
+                PedidosRetorno pedidosRetorno = _consultarPedidosUseCase.GetOrders();
+                return Ok(new { pedidosRetorno });
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Error to get Orders: {0}", ex.Message);
+                return BadRequest($"Error to get Orders: {ex.Message}");
+            }
+        }
+
+        [Route("{codStatusPedido:int}")]
+        [HttpGet]
+        public IActionResult ConsultarPedidos(CodStatusPedido codStatusPedido)
         {
             try
             {
                 PedidosRetorno pedidosRetorno = _consultarPedidosUseCase.ConsultarPedidos(codStatusPedido);
-                return Ok(new { pedido = pedidosRetorno });
+                return Ok(new { pedidosRetorno });
             }
             catch (Exception ex)
             {
@@ -70,5 +86,7 @@ namespace Pedidos.Controllers
                 return BadRequest($"Erro ao consultar pedidos: {ex.Message}");
             }           
         }
+
+        
     }
 }

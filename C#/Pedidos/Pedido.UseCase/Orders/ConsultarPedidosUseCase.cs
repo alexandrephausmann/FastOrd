@@ -17,5 +17,10 @@ namespace Pedidos.UseCase.Orders
         {
             return _pedidoDAO.ConsultarPedidos(codStatusPedido);
         }
+
+        public PedidosRetorno GetOrders()
+        {
+            return _pedidoDAO.GetOrders();
+        }
     }
 }

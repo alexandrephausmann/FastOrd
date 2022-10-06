@@ -12,5 +12,6 @@ namespace Pedidos.Dados.Interface
         void InserirItensPedido(List<TbOrderItem> itensPedido);
         List<TbIntegrationProduct> RecuperarCodigoProdutoFastOrder(CodTipoIntegracao codTipoIntegracao);
         PedidosRetorno ConsultarPedidos(CodStatusPedido codStatusPedido);
+        PedidosRetorno GetOrders();
     }
 }

@@ -6,5 +6,6 @@ namespace Pedidos.UseCase.Orders.Interfaces
     public interface IConsultarPedidosUseCase
     {
         PedidosRetorno ConsultarPedidos(CodStatusPedido codStatusPedido);
+        PedidosRetorno GetOrders();
     }
 }
