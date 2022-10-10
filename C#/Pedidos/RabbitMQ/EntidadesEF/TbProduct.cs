@@ -9,6 +9,6 @@ namespace Pedidos.Domain.EntidadesEF
     {
         public int? CodProduct { get; set; }
         public string DescProduct { get; set; }
-        public double? ProductValue { get; set; }
+        public double ProductValue { get; set; }
     }
 }

@@ -20,6 +20,7 @@ import { OrderRoutingModule } from '../components/orders/order-routing.module';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { OrderCardComponent } from '../components/orders/order-card/order-card.component';
+import { MatSelectModule } from '@angular/material/select';
 
 
 @NgModule({
@@ -46,6 +47,7 @@ import { OrderCardComponent } from '../components/orders/order-card/order-card.c
     MatButtonModule,
     MatMenuModule,
     MatCardModule,
+    MatSelectModule,
     MatExpansionModule,
     MatDividerModule,
     OrderRoutingModule

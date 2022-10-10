@@ -1,1 +1,43 @@
-<p>order-create works!</p>
+<mat-card class="card">
+        <mat-card-title>New order</mat-card-title>
+        <mat-divider inset></mat-divider>
+
+        <div class="content">
+                <div class="row">
+                        <mat-form-field appearance="fill" class="column">
+                                <mat-label>Product</mat-label>
+                                <mat-select name="food">
+                                        <mat-option *ngFor="let food of foods" [value]="food.value">
+                                                {{food.viewValue}}
+                                        </mat-option>
+                                </mat-select>
+                        </mat-form-field>
+
+                        <div class="quantity column">
+                                <button (click)="decrement()" ng-disabled="isDecrementDisabled">-</button>
+                                <input ng-model="quantityField" type='text' name='quantity' value='{{quantityField}}'
+                                        class='qty' />
+                                <button (click)="increment()">+</button>
+                        </div>
+
+                        <a (click)="addProduct()" class="add-button column">
+                                <i class="material-icons add">
+                                        add
+                                </i>
+                        </a>
+                </div>
+        </div>
+        <mat-divider inset></mat-divider>
+        <div class="total">
+                <p class="total-value">
+                        Total: 27
+                </p>
+        </div>
+
+        <mat-card-actions>
+                <div class="row">
+                        <button mat-button class="column">Cancel</button>
+                        <button mat-button class="column">Save</button>
+                </div>
+        </mat-card-actions>
+</mat-card>

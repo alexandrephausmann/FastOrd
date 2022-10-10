@@ -17,5 +17,6 @@ namespace Pedidos.Domain.Entidades
         public int? NumResidencia { get; set; }
         public string DadoComplementar { get; set; }
         public string NumCelular { get; set; }
+        public double TotalValue { get; set; }
     }
 }

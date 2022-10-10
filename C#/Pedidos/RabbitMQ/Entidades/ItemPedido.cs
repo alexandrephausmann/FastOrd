@@ -10,6 +10,7 @@ namespace Pedidos.Domain.Entidades
         public int CodProduto { get; set; }
         public string DescProduto { get; set; }
         public int Quantidade { get; set; }
+        public double ProductValue { get; set; }
 
     }
 }

@@ -4,6 +4,7 @@ using Pedidos.Domain.Entidades;
 using Pedidos.Domain.EntidadesEF;
 using Pedidos.Domain.Enums;
 using Pedidos.Domain.Retorno;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -142,10 +143,13 @@ namespace Pedidos.Dados
                                             CodPedido = itemPedido.IdOrder,
                                             Quantidade = (int)itemPedido.Quantity,
                                             CodProduto = (int)produto.CodProduct,
-                                            DescProduto = produto.DescProduct
+                                            DescProduto = produto.DescProduct,
+                                            ProductValue = produto.ProductValue
                                         }).ToList();
                     pedidoItem.ItensPedido.AddRange(itensPedidos);
+                    var totalValue = pedidoItem.ItensPedido.Sum(pedidoItem => pedidoItem.Quantidade * pedidoItem.ProductValue);
                     pedidoItem.Pedido = pedidos.Find(pedido => pedido.CodPedido == codigoPedido);
+                    pedidoItem.Pedido.TotalValue = Math.Round(totalValue, 2);
                     pedidosRetorno.PedidosItens.Add(pedidoItem);
                 }
 
