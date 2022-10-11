@@ -16,6 +16,7 @@ import { registerLocaleData } from '@angular/common';
 import { ProductModule } from './modules/product.module';
 import { TemplateModule } from './modules/template.module';
 import { OrderModule } from './modules/order.module';
+import { ProductService } from './components/product/product.service';
 
 
 registerLocaleData(localePt);
@@ -36,7 +37,7 @@ registerLocaleData(localePt);
     TemplateModule,
     OrderModule
   ],
-  providers: [],
+  providers: [ProductService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

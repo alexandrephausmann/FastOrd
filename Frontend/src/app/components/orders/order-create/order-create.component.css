@@ -19,6 +19,7 @@
 .column {
         padding-top: 10px;
         float: left;
+        justify-content: center;
         width: 50%;
         padding: 10px;
 }
@@ -33,4 +34,32 @@
         background-color: green;
         border-radius: 50%;
 
+}
+
+.button-quantity {
+        color: black;
+        background-color: orange;
+        font-weight: bold;
+        border-color: orange;
+        height: 39px;
+}
+
+.qty {
+        border-color: white;
+}
+
+.disabled {
+        all: unset;
+        background-color: grey;
+        border-color: grey !important;
+
+}
+
+
+::ng-deep .mat-form-field-wrapper {
+        padding-bottom: 0px !important;
+}
+
+::ng-deep .mat-form-field-underline {
+        display: none !important;
 }

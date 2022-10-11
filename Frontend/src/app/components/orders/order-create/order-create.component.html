@@ -6,19 +6,22 @@
                 <div class="row">
                         <mat-form-field appearance="fill" class="column">
                                 <mat-label>Product</mat-label>
-                                <mat-select name="food">
-                                        <mat-option *ngFor="let food of foods" [value]="food.value">
-                                                {{food.viewValue}}
+                                <mat-select name="product">
+                                        <mat-option *ngFor="let product of products" [value]="product.codProduct">
+                                                {{product.descProduct}}
                                         </mat-option>
                                 </mat-select>
                         </mat-form-field>
 
-                        <div class="quantity column">
-                                <button (click)="decrement()" ng-disabled="isDecrementDisabled">-</button>
-                                <input ng-model="quantityField" type='text' name='quantity' value='{{quantityField}}'
-                                        class='qty' />
-                                <button (click)="increment()">+</button>
-                        </div>
+                        <button mat-raised-button color="primary" (click)="decrement()"
+                                [disabled]="isDecrementDisabled? 'disabled' : null">-</button>
+
+                        <input ng-model="quantityField" type='text' name='quantity' value='{{quantityField}}'
+                                class='qty column'
+                                onkeypress="return (event.charCode == 8 || event.charCode == 0 || event.charCode == 13) ? null : event.charCode >= 48 && event.charCode <= 57"
+                                (change)="changeQuantityNumber($event)" />
+
+                        <button mat-raised-button color="accent" (click)="increment()">+</button>
 
                         <a (click)="addProduct()" class="add-button column">
                                 <i class="material-icons add">

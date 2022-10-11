@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
-interface Food {
-  value: string;
-  viewValue: string;
-}
+import { Product } from '../../product/product.model';
+import { ProductService } from '../../product/product.service'
 
 @Component({
   selector: 'app-order-create',
@@ -15,15 +12,15 @@ export class OrderCreateComponent implements OnInit {
   quantityField = 0;
   isDecrementDisabled = true;
 
-  foods: Food[] = [
-    { value: 'steak-0', viewValue: 'Steak' },
-    { value: 'pizza-1', viewValue: 'Pizza' },
-    { value: 'tacos-2', viewValue: 'Tacos' },
-  ];
+  products: Product[] = [];
 
-  constructor() { }
+  constructor(private productService: ProductService) { }
 
   ngOnInit(): void {
+    this.productService.read().subscribe(response => {
+      this.products = response;
+      console.log(response);
+    })
   }
 
   addProduct(): void {
@@ -31,15 +28,25 @@ export class OrderCreateComponent implements OnInit {
   }
 
   increment() {
-    console.log('increment ' + this.quantityField)
     this.quantityField++;
-    console.log('increment ' + this.quantityField)
+    if (this.quantityField == 1)
+      this.isDecrementDisabled = false;
+
   }
 
   decrement() {
-    console.log('decrement ' + this.quantityField)
     this.quantityField--;
-    console.log('decrement ' + this.quantityField)
+    if (this.quantityField == 0)
+      this.isDecrementDisabled = true;
+  }
+
+  changeQuantityNumber(newValue: any) {
+    this.quantityField = newValue.target.value;
+
+    if (this.quantityField == 0)
+      this.isDecrementDisabled = true;
+    else
+      this.isDecrementDisabled = false;
   }
 
 }
