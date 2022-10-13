@@ -18,8 +18,6 @@ export class OrderCardComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log("order " + this.order.codPedido);
-    console.log("orderItens " + this.orderItens.length);
   }
 
 }

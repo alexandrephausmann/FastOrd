@@ -2,13 +2,8 @@
         max-width: 500px;
 }
 
-.content {
+.product-add {
         padding-top: 10px;
-}
-
-.total-value {
-        text-align: right;
-        font-weight: bold;
 }
 
 .row {

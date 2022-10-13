@@ -1,0 +1,23 @@
+.mat-column-item {
+        flex: none;
+        width: 148px;
+}
+
+.mat-column-value {
+        flex: none;
+        width: 100px;
+}
+
+.mat-column-quantity {
+        flex: none;
+        width: 75px;
+}
+
+.mat-column-subtotal {
+        flex: none;
+        width: 129px;
+}
+
+tr.mat-footer-row {
+        font-weight: bold;
+}

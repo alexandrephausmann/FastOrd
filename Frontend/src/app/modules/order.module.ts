@@ -21,6 +21,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { OrderCardComponent } from '../components/orders/order-card/order-card.component';
 import { MatSelectModule } from '@angular/material/select';
+import { OrderProductContainerComponent } from '../components/orders/order-product-container/order-product-container.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { MatSelectModule } from '@angular/material/select';
     OrderCreateComponent,
     OrderReadComponent,
     OrdersComponent,
-    OrderCardComponent
+    OrderCardComponent,
+    OrderProductContainerComponent
   ],
   imports: [
     CommonModule,

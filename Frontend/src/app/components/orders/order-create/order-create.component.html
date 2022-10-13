@@ -2,11 +2,11 @@
         <mat-card-title>New order</mat-card-title>
         <mat-divider inset></mat-divider>
 
-        <div class="content">
+        <div class="product-add">
                 <div class="row">
                         <mat-form-field appearance="fill" class="column">
                                 <mat-label>Product</mat-label>
-                                <mat-select name="product">
+                                <mat-select name="product" [(ngModel)]="selectedValue">
                                         <mat-option *ngFor="let product of products" [value]="product.codProduct">
                                                 {{product.descProduct}}
                                         </mat-option>
@@ -30,12 +30,9 @@
                         </a>
                 </div>
         </div>
+        <app-order-product-container [productsOrder]="productsOrder" [totalOrderPrice]="totalOrderPrice">
+        </app-order-product-container>
         <mat-divider inset></mat-divider>
-        <div class="total">
-                <p class="total-value">
-                        Total: 27
-                </p>
-        </div>
 
         <mat-card-actions>
                 <div class="row">
