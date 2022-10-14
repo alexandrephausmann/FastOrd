@@ -30,7 +30,8 @@
                         </a>
                 </div>
         </div>
-        <app-order-product-container [productsOrder]="productsOrder" [totalOrderPrice]="totalOrderPrice">
+        <app-order-product-container [productsOrder]="productsOrder" [totalOrderPrice]="totalOrderPrice"
+                (deleteProductEvent)="deleteProduct($event)">
         </app-order-product-container>
         <mat-divider inset></mat-divider>
 

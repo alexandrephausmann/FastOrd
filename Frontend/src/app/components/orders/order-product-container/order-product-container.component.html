@@ -19,7 +19,6 @@
                         <th mat-header-cell *matHeaderCellDef> Quantity </th>
                         <td mat-cell *matCellDef="let productOrder"> {{productOrder.quantity}} </td>
                         <td mat-footer-cell *matFooterCellDef>Total: </td>
-
                 </ng-container>
 
                 <!-- SubTotal Column -->
@@ -29,6 +28,19 @@
                                 productOrder.quantity | currency:'BRL'}}
                         </td>
                         <td mat-footer-cell *matFooterCellDef> {{totalOrderPrice | currency:'BRL'}} </td>
+                </ng-container>
+
+                <!-- Action Column -->
+                <ng-container matColumnDef="action">
+                        <th mat-header-cell *matHeaderCellDef>Actions</th>
+                        <td mat-cell *matCellDef="let productOrder">
+                                <a (click)="deleteProduct(productOrder.codProduct)" class="button-delete">
+                                        <i class="material-icons delete">
+                                                delete
+                                        </i>
+                                </a>
+                        </td>
+                        <td mat-footer-cell *matFooterCellDef></td>
                 </ng-container>
 
                 <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

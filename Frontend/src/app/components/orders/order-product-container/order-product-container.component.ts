@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ProductOrder } from '../productOrder.model';
+import { Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-order-product-container',
@@ -10,7 +11,9 @@ export class OrderProductContainerComponent implements OnInit {
 
   constructor() { }
 
-  displayedColumns: string[] = ['item', 'value', 'quantity', 'subtotal'];
+  @Output() deleteProductEvent = new EventEmitter<number>();
+
+  displayedColumns: string[] = ['item', 'value', 'quantity', 'subtotal', 'action'];
 
   @Input()
   productsOrder: ProductOrder[] = [];
@@ -21,5 +24,8 @@ export class OrderProductContainerComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  deleteProduct(id: number) {
+    this.deleteProductEvent.emit(id);
+  }
 
 }

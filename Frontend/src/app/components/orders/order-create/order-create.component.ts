@@ -1,3 +1,4 @@
+import swal from 'sweetalert2';
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../../product/product.model';
 import { ProductService } from '../../product/product.service'
@@ -62,6 +63,8 @@ export class OrderCreateComponent implements OnInit {
       }
 
       this.productsOrder = [...this.productsOrder];
+      this.updateTotalCost();
+      this.cleanFields();
     }
   }
 
@@ -91,6 +94,40 @@ export class OrderCreateComponent implements OnInit {
     this.totalOrderPrice = +this.productsOrder.reduce((sum, currentItem) => {
       return sum + (currentItem.quantity * currentItem.productValue);
     }, 0).toFixed(2);
+  }
+
+  deleteProduct(id: number) {
+    swal.fire({
+      title: 'Are you sure want to remove?',
+      text: 'You will not be able to recover this product!',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Yes, delete it!',
+      cancelButtonText: 'No, keep it'
+    }).then((result) => {
+      if (result.value) {
+        const productIndex = this.productsOrder.findIndex(item => item.codProduct === id);
+        this.productsOrder.splice(productIndex, 1);
+        this.productsOrder = [...this.productsOrder];
+        this.updateTotalCost();
+        swal.fire(
+          'Deleted!',
+          'The product was deleted sucessfully!.',
+          'success'
+        )
+      } else if (result.dismiss === swal.DismissReason.cancel) {
+        swal.fire(
+          'Cancelled',
+          'Your product is safe :)',
+          'error'
+        )
+      }
+    })
+  }
+
+  cleanFields() {
+    this.quantityField = 0;
+    this.selectedValue = 0;
 
   }
 

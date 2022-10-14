@@ -21,3 +21,11 @@
 tr.mat-footer-row {
         font-weight: bold;
 }
+
+.button-delete {
+        cursor: pointer;
+}
+
+.delete {
+        color: red !important;
+}
