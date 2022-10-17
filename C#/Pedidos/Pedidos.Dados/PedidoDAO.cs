@@ -19,34 +19,34 @@ namespace Pedidos.Dados
             _configuracao = configuracao;
         }
 
-        public int InserirPedido(TbOrder pedido)
+        public int InserirPedido(TbOrder orderDetails)
         {
-            int codPedido = 0;
+            int idOrder = 0;
             using (var db = new FastOrderContext(_configuracao))
             {
-                db.TbOrder.Add(pedido);
+                db.TbOrder.Add(orderDetails);
                 db.SaveChanges();
-                codPedido = pedido.IdOrder;
+                idOrder = orderDetails.IdOrder;
             }
-            return codPedido;
+            return idOrder;
         }
 
-        public void InserirItensPedido(List<TbOrderItem> itensPedido)
+        public void InserirItensPedido(List<TbOrderItem> productItens)
         {
             using (var db = new FastOrderContext(_configuracao))
             {
-                db.TbOrderItem.AddRange(itensPedido);
+                db.TbOrderItem.AddRange(productItens);
                 db.SaveChanges();
             }
         }
 
-        public List<TbIntegrationProduct> RecuperarCodigoProdutoFastOrder(CodTipoIntegracao codTipoIntegracao)
+        public List<TbIntegrationProduct> RecuperarCodigoProdutoFastOrder(CodTipoIntegracao idIntegrationType)
         {
             var relacaoCodigoExternoFastOrder = new List<TbIntegrationProduct>();
 
             using (var db = new FastOrderContext(_configuracao))
             {
-                relacaoCodigoExternoFastOrder = db.TbIntegrationProduct.Where(prod => prod.IdIntegrationType == (int?)codTipoIntegracao).ToList();
+                relacaoCodigoExternoFastOrder = db.TbIntegrationProduct.Where(prod => prod.IdIntegrationType == (int?)idIntegrationType).ToList();
             }
             return relacaoCodigoExternoFastOrder;
         }

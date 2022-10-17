@@ -4,6 +4,8 @@ import { Product } from '../../product/product.model';
 import { ProductService } from '../../product/product.service'
 import { OrderService } from '../order.service';
 import { ProductOrder } from '../productOrder.model';
+import { ProductOrderRequest } from '../productOrderRequest.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-order-create',
@@ -19,8 +21,12 @@ export class OrderCreateComponent implements OnInit {
   products: Product[] = [];
   productsOrder: ProductOrder[] = [];
   selectedValue: number = 0;
+  newOrder: ProductOrderRequest = {
+    productItens: [],
+    orderDetails: {}
+  };
 
-  constructor(private productService: ProductService, private orderService: OrderService) { }
+  constructor(private productService: ProductService, private orderService: OrderService, private router: Router) { }
 
   ngOnInit(): void {
     this.productService.read().subscribe(response => {
@@ -129,6 +135,19 @@ export class OrderCreateComponent implements OnInit {
     this.quantityField = 0;
     this.selectedValue = 0;
 
+  }
+
+  createOrder() {
+    this.newOrder.productItens = [...this.productsOrder];
+
+    this.orderService.create(this.newOrder).subscribe(() => {
+      this.orderService.showMessage("Order created successfully!");
+      this.router.navigate(['/orders']);
+    })
+  }
+
+  cancel(): void {
+    this.router.navigate(['/orders'])
   }
 
 }

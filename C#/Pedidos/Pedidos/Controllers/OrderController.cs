@@ -43,9 +43,9 @@ namespace Pedidos.Controllers
             var pedidoIn = _mapper.Map<PedidoIn>(pedidoRequest);
             try
             {
-                _criarPedidoUseCase.CriarPedido(pedidoIn.Pedido, pedidoIn.ItensPedido);
+                _criarPedidoUseCase.CriarPedido(pedidoIn.OrderDetails, pedidoIn.ProductItens);
                 _enviarMensagemRabbitUseCase.EnviarMensagem(pedidoIn);
-                return Ok(new { pedido = pedidoIn.Pedido, itemPedido = pedidoIn.ItensPedido });
+                return Ok(new { pedido = pedidoIn.OrderDetails, itemPedido = pedidoIn.ProductItens });
             }
             catch (Exception ex)
             {

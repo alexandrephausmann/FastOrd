@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { EMPTY, map, catchError } from 'rxjs';
 import { Observable } from 'rxjs/internal/Observable';
+import { ProductOrderRequest } from './productOrderRequest.model';
 
 @Injectable({
   providedIn: 'root'
@@ -33,6 +34,14 @@ export class OrderService {
       map((obj) => obj),
       catchError((e) => this.errorHandler(e))
     )
+  }
+
+  create(product: ProductOrderRequest): Observable<ProductOrderRequest> {
+    return this.http.post<ProductOrderRequest>(this.baseUrl, product).pipe(
+      map((obj) => obj),
+      catchError((e) => this.errorHandler(e))
+    )
+
   }
 
 }

@@ -28,7 +28,6 @@ export class ProductService {
       map((obj) => obj),
       catchError((e) => this.errorHandler(e))
     )
-
   }
 
   errorHandler(e: any): Observable<any> {
