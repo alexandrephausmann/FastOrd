@@ -17,6 +17,7 @@ export class OrderCreateComponent implements OnInit {
   quantityField = 0;
   isDecrementDisabled = true;
   totalOrderPrice: number = 0;
+  notes: string = '';
 
   products: Product[] = [];
   productsOrder: ProductOrder[] = [];
@@ -139,6 +140,9 @@ export class OrderCreateComponent implements OnInit {
 
   createOrder() {
     this.newOrder.productItens = [...this.productsOrder];
+    console.log('note ' + this.notes);
+    if (this.notes != '')
+      this.newOrder.orderDetails.complementaryData = this.notes;
 
     this.orderService.create(this.newOrder).subscribe(() => {
       this.orderService.showMessage("Order created successfully!");

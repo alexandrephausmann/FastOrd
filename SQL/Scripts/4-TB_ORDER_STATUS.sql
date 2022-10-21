@@ -8,9 +8,10 @@ CREATE TABLE TB_ORDER_STATUS (
 
 INSERT INTO TB_ORDER_STATUS 
 VALUES 
+('Ready to prepare'),
+('In progress'),
+('Ready for withdrawal'),
 ('Done'),
-('Awaiting client'),
-('In kitchen'),
-('Awaiting for kitchen');
+('Cancelled');
 
 select * from TB_ORDER_STATUS

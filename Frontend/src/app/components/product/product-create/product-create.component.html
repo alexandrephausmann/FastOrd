@@ -10,12 +10,13 @@
                         <input matInput placeholder="Price (R$)" [(ngModel)]="product.productValue" name="price">
                 </mat-form-field>
         </form>
-        <button mat-raised-button (click)="createProduct()" class="create">
-                Save
-        </button>
 
         <button mat-raised-button (click)="cancel()" class="cancel">
                 Cancel
+        </button>
+
+        <button mat-raised-button (click)="createProduct()" class="create">
+                Save
         </button>
 
 </mat-card>

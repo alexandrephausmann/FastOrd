@@ -1,18 +1,32 @@
 <mat-card class="card">
-        <mat-card-title>Order Number: {{order.codPedido}}</mat-card-title>
-        <mat-accordion>
-                <mat-expansion-panel>
-                        <mat-expansion-panel-header>
-                                <mat-panel-title>
-                                        Total Order Itens: {{orderItens.length}}
-                                </mat-panel-title>
-                        </mat-expansion-panel-header>
-                        <p *ngFor="let orderItem of orderItens">OrdemItem:{{orderItem.codItemPedido}} Product:
-                                {{orderItem.descProduto}} Quantity: {{orderItem.quantidade}} ProductValue:
-                                {{orderItem.productValue | currency:'BRL'}}
-                        </p>
-                </mat-expansion-panel>
-        </mat-accordion>
+        <div class="row">
+                <mat-card-title>Order Number: {{order.codPedido}}</mat-card-title>
+                <i class="material-icons icon">
+                        circle
+                </i>
+        </div>
+
+        <div class="details-panel">
+                <mat-accordion>
+                        <mat-expansion-panel>
+                                <mat-expansion-panel-header>
+                                        <mat-panel-title>
+                                                Total Itens: {{orderItens.length}}
+                                        </mat-panel-title>
+                                </mat-expansion-panel-header>
+                                <p *ngFor="let orderItem of orderItens"> {{orderItem.codItemPedido}} -
+                                        {{orderItem.descProduto}}
+                                        Quantity: {{orderItem.quantidade}}
+                                        Cost: {{orderItem.productValue | currency:'BRL'}}
+                                </p>
+                                <p *ngIf="order.dadoComplementar">
+                                        <b>Notes:</b> {{order.dadoComplementar}}
+                                </p>
+
+                        </mat-expansion-panel>
+                </mat-accordion>
+        </div>
+
         <mat-divider inset></mat-divider>
         <div class="row total">
                 <p class="status column bold">

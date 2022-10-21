@@ -1,6 +1,6 @@
 .card {
         max-width: 400px;
-        background-color: lightcoral;
+        background-color: lightgray;
 }
 
 @media (max-width: 1000px) {
@@ -8,6 +8,12 @@
         .card {
                 max-width: 300px;
         }
+}
+
+.icon {
+        margin-left: auto;
+        margin-right: 0;
+        color: red;
 }
 
 .status {
@@ -72,4 +78,8 @@ button {
 
 .mat-expansion-panel-header-description {
         flex-grow: 1;
+}
+
+.details-panel {
+        padding-top: 5px;
 }
