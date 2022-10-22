@@ -8,8 +8,8 @@ responsivity problems and can be not so user friendly.
 
 ## 🚀 Technology idea
 
-The idea it was improve my personal skills and mix that in one entire system. To make the third systems integration, my idea
-was use RabbitMQ.
+The idea was to improve my personal skills and mix that into one entire system. 
+To make the third systems integration, my idea was to use RabbitMQ.
 
 <h2>Tools</h2>
 <ul>
@@ -27,5 +27,5 @@ Future tecnologies maybe:
 
 # Running project 
 
-Todo: In progress
+<b>Todo:</b> In progress
 
