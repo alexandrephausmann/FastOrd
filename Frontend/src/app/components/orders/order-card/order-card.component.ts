@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { OrderStatus } from 'src/app/enums/order-status';
 
 @Component({
   selector: 'app-order-card',
@@ -14,6 +15,9 @@ export class OrderCardComponent implements OnInit {
 
   @Input()
   orderItens: any;
+
+  OrderStatus = OrderStatus;
+
 
   constructor() { }
 

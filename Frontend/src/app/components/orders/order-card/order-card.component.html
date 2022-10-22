@@ -1,7 +1,13 @@
 <mat-card class="card">
         <div class="row">
                 <mat-card-title>Order Number: {{order.codPedido}}</mat-card-title>
-                <i class="material-icons icon">
+                <i class="material-icons icon" [ngClass]="{
+                        'ready-to-prepare': order.codStatusPedido === OrderStatus.ReadyToPrepare,
+                        'progress': order.codStatusPedido === OrderStatus.Progress,
+                        'ready-for-withdrawal': order.codStatusPedido === OrderStatus.ReadyForWithdrawal,
+                        'done': order.codStatusPedido === OrderStatus.Done,
+                        'cancelled': order.codStatusPedido === OrderStatus.Cancelled
+                      }">
                         circle
                 </i>
         </div>
@@ -38,12 +44,24 @@
         </div>
         <mat-card-actions>
                 <div class="row">
-                        <button mat-button class="column action cancel">Move to Canceled</button>
-                        <button mat-button class="column action progress">Move to In progress</button>
+                        <button *ngIf="order.codStatusPedido != OrderStatus.ReadyToPrepare" mat-button
+                                class="column action ready-to-prepare">Move to Ready to prepare</button>
+                        <button *ngIf="order.codStatusPedido != OrderStatus.Progress" mat-button
+                                class="column action progress">Move to In progress</button>
+                        <button *ngIf="order.codStatusPedido != OrderStatus.ReadyForWithdrawal && 
+                                      (order.codStatusPedido == OrderStatus.ReadyToPrepare || order.codStatusPedido == OrderStatus.Progress)"
+                                mat-button class="column action ready-for-withdrawal">Move to Ready to
+                                Withdrawal</button>
                 </div>
                 <div class="row bottom">
-                        <button mat-button class="column action take-away">Move to Ready to pick up</button>
-                        <button mat-button class="column action done">Move to Done</button>
+                        <button *ngIf="order.codStatusPedido != OrderStatus.ReadyForWithdrawal && 
+                                      (order.codStatusPedido == OrderStatus.Done || order.codStatusPedido == OrderStatus.Cancelled)"
+                                mat-button class="column action ready-for-withdrawal">Move to Ready to
+                                Withdrawal</button>
+                        <button *ngIf="order.codStatusPedido != OrderStatus.Done" mat-button
+                                class="column action done">Move to Done</button>
+                        <button *ngIf="order.codStatusPedido != OrderStatus.Cancelled" mat-button
+                                class="column action cancel">Move to Canceled</button>
                 </div>
         </mat-card-actions>
 </mat-card>
