@@ -39,12 +39,12 @@ export class OrderCreateComponent implements OnInit {
   addProduct(): void {
 
     if (this.selectedValue == 0) {
-      this.orderService.showMessage("You neeed to select a product");
+      this.orderService.showMessage("Please select a product!");
       return;
     }
 
     if (this.quantityField <= 0) {
-      this.orderService.showMessage("You neeed to put a quantity for the product");
+      this.orderService.showMessage("Please insert a valid quantity value!");
       return;
     }
 
@@ -145,7 +145,7 @@ export class OrderCreateComponent implements OnInit {
       this.newOrder.orderDetails.complementaryData = this.notes;
 
     this.orderService.create(this.newOrder).subscribe(() => {
-      this.orderService.showMessage("Order created successfully!");
+      this.orderService.showMessage("Order created!");
       this.router.navigate(['/orders']);
     })
   }

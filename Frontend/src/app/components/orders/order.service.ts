@@ -25,7 +25,7 @@ export class OrderService {
   }
 
   errorHandler(e: any): Observable<any> {
-    this.showMessage("Ocorreu um erro", true)
+    this.showMessage("Unexpected error", true)
     return EMPTY
   }
 

@@ -26,7 +26,7 @@ export class ProductReadComponent implements OnInit {
 
   deleteProduct(id: number) {
     swal.fire({
-      title: 'Are you sure want to remove?',
+      title: 'Are you sure that you want to remove?',
       text: 'You will not be able to recover this product!',
       icon: 'warning',
       showCancelButton: true,
@@ -40,7 +40,7 @@ export class ProductReadComponent implements OnInit {
           this.products = [...this.products];
           swal.fire(
             'Deleted!',
-            'The product was deleted sucessfully!.',
+            'The product was deleted!.',
             'success'
           )
         });
