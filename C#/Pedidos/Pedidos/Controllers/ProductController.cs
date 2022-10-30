@@ -6,7 +6,7 @@ using Pedidos.Models.In;
 using System;
 using AutoMapper;
 using Pedidos.Domain.Enums;
-using Pedidos.Domain.Retorno;
+using Pedidos.Domain.Response;
 using Pedidos.UseCase.Products.Interfaces;
 using Pedidos.Domain.EntidadesEF;
 

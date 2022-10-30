@@ -1,5 +1,4 @@
 ﻿using Pedidos.Dados.Interface;
-using Pedidos.Domain.Entidades;
 using Pedidos.Domain.EntidadesEF;
 using Pedidos.Domain.Enums;
 using Pedidos.UseCase.Orders.Interfaces;
@@ -10,15 +9,15 @@ namespace Pedidos.UseCase.Orders
 {
     public class IntegrarProdutoUseCase : IIntegrarProdutoUseCase
     {
-        private readonly IPedidoDAO _pedidoDAO;
-        public IntegrarProdutoUseCase(IPedidoDAO pedidoDAO)
+        private readonly IOrderDAO _orderDAO;
+        public IntegrarProdutoUseCase(IOrderDAO orderDAO)
         {
-            _pedidoDAO = pedidoDAO;
+            _orderDAO = orderDAO;
         }
 
         public void RecuperarCodigoProdutoFastOrder(CodTipoIntegracao idIntegrationType, List<TbOrderItem> productItens)
         {
-            var relacaoCodigoExternoFastOrder = _pedidoDAO.RecuperarCodigoProdutoFastOrder(idIntegrationType);
+            var relacaoCodigoExternoFastOrder = _orderDAO.RecuperarCodigoProdutoFastOrder(idIntegrationType);
 
             foreach (TbOrderItem productItem in productItens)
             {

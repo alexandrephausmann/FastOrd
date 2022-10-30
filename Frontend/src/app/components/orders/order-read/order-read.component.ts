@@ -15,7 +15,7 @@ export class OrderReadComponent implements OnInit {
   ngOnInit(): void {
     this.orderService.read().subscribe(response => {
       this.orders = response;
-      console.log(this.orders.pedidosRetorno);
+      console.log(this.orders.ordersResponse);
     })
   }
 

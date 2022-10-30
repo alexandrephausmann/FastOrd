@@ -3,7 +3,7 @@
 
 namespace Pedidos.Domain.Entidades
 {
-    public class ItemPedido
+    public class OrderItem
     {
         public int CodPedido { get; set; }
         public int CodItemPedido { get; set; }

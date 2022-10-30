@@ -6,7 +6,7 @@ using Pedidos.Models.In;
 using System;
 using AutoMapper;
 using Pedidos.Domain.Enums;
-using Pedidos.Domain.Retorno;
+using Pedidos.Domain.Response;
 
 namespace Pedidos.Controllers
 {
@@ -17,6 +17,7 @@ namespace Pedidos.Controllers
         private readonly ILogger<OrderController> _logger;
         private readonly ICriarPedidoUseCase _criarPedidoUseCase;
         private readonly IConsultarPedidosUseCase _consultarPedidosUseCase;
+        private readonly IChangeOrderStatusUseCase _changeOrderStatusUseCase;
         private readonly IEnviarMensagemRabbitUseCase _enviarMensagemRabbitUseCase;
         private readonly IMapper _mapper;
 
@@ -25,6 +26,7 @@ namespace Pedidos.Controllers
             ILogger<OrderController> logger, 
             ICriarPedidoUseCase enviarPedidoUseCase,
             IConsultarPedidosUseCase consultarPedidosUseCase,
+            IChangeOrderStatusUseCase changeOrderStatusUseCase,
             IEnviarMensagemRabbitUseCase enviarMensagemRabbitUseCase,
             IMapper mapper           
         )
@@ -32,6 +34,7 @@ namespace Pedidos.Controllers
             _logger = logger;
             _criarPedidoUseCase = enviarPedidoUseCase;
             _consultarPedidosUseCase = consultarPedidosUseCase;
+            _changeOrderStatusUseCase = changeOrderStatusUseCase;
             _enviarMensagemRabbitUseCase = enviarMensagemRabbitUseCase;
             _mapper = mapper;
         }
@@ -61,8 +64,8 @@ namespace Pedidos.Controllers
         {
             try
             {
-                PedidosRetorno pedidosRetorno = _consultarPedidosUseCase.GetOrders();
-                return Ok(new { pedidosRetorno });
+                OrdersResponse ordersResponse = _consultarPedidosUseCase.GetOrders();
+                return Ok(new { ordersResponse });
             }
             catch (Exception ex)
             {
@@ -73,11 +76,11 @@ namespace Pedidos.Controllers
 
         [Route("{codStatusPedido:int}")]
         [HttpGet]
-        public IActionResult ConsultarPedidos(CodStatusPedido codStatusPedido)
+        public IActionResult ConsultarPedidos(IdOrderStatus codStatusPedido)
         {
             try
             {
-                PedidosRetorno pedidosRetorno = _consultarPedidosUseCase.ConsultarPedidos(codStatusPedido);
+                OrdersResponse pedidosRetorno = _consultarPedidosUseCase.ConsultarPedidos(codStatusPedido);
                 return Ok(new { pedidosRetorno });
             }
             catch (Exception ex)
@@ -87,6 +90,25 @@ namespace Pedidos.Controllers
             }           
         }
 
-        
+        [Route("updateStatus")]
+        [HttpPut]
+        public IActionResult UpdateStatus([FromBody] ChangeStatusRequest changeStatusRequest)
+        {
+            var changeStatusIn = _mapper.Map<ChangeStatusIn>(changeStatusRequest);
+            try
+            {
+                var orderStatus = _changeOrderStatusUseCase.ChangeOrderStatus(changeStatusIn.IdOrder, changeStatusIn.IdOrderStatus);
+                _enviarMensagemRabbitUseCase.EnviarMensagem(changeStatusIn);
+                return Ok(orderStatus);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Error to update the order status {0}", ex.Message);
+                return BadRequest($"Error to update the order status: {ex.Message}");
+            }
+
+        }
+
+
     }
 }

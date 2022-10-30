@@ -9,11 +9,11 @@ namespace Pedidos.UseCase.Orders
 {
     public class CriarPedidoUseCase : ICriarPedidoUseCase
     {
-        private readonly IPedidoDAO _pedidoDAO;
+        private readonly IOrderDAO _orderDAO;
         private readonly IIntegrarProdutoUseCase _integrarProdutoUseCase;    
-        public CriarPedidoUseCase(IPedidoDAO pedidoDAO, IIntegrarProdutoUseCase integrarProdutoUseCase)
+        public CriarPedidoUseCase(IOrderDAO orderDAO, IIntegrarProdutoUseCase integrarProdutoUseCase)
         {
-            _pedidoDAO = pedidoDAO;
+            _orderDAO = orderDAO;
             _integrarProdutoUseCase = integrarProdutoUseCase;
         }
         public void CriarPedido(TbOrder orderDetails, List<TbOrderItem> productItens)
@@ -36,9 +36,9 @@ namespace Pedidos.UseCase.Orders
                 orderDetails.IdIntegrationType = (int)CodTipoIntegracao.SemIntegracao;
 
             if (orderDetails.IdOrderStatus == null)
-                orderDetails.IdOrderStatus = (int)CodStatusPedido.Realizado;
+                orderDetails.IdOrderStatus = (int)IdOrderStatus.ReadyToPrepare;
 
-            orderDetails.IdOrder = _pedidoDAO.InserirPedido(orderDetails); 
+            orderDetails.IdOrder = _orderDAO.InserirPedido(orderDetails); 
         }
 
         private void InserirItensPedido(List<TbOrderItem> productItens, int idOrder)
@@ -48,7 +48,7 @@ namespace Pedidos.UseCase.Orders
                 productItens[i].IdOrderItem = i + 1;
                 productItens[i].IdOrder = idOrder;
              }
-            _pedidoDAO.InserirItensPedido(productItens);
+            _orderDAO.InserirItensPedido(productItens);
         }
        
     }

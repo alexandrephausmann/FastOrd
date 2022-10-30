@@ -1,26 +1,26 @@
 ﻿using Pedidos.Dados.Interface;
 using Pedidos.Domain.Enums;
-using Pedidos.Domain.Retorno;
+using Pedidos.Domain.Response;
 using Pedidos.UseCase.Orders.Interfaces;
 
 namespace Pedidos.UseCase.Orders
 {
     public class ConsultarPedidosUseCase : IConsultarPedidosUseCase
     {
-        private readonly IPedidoDAO _pedidoDAO;
-        public ConsultarPedidosUseCase(IPedidoDAO pedidoDAO)
+        private readonly IOrderDAO _orderDAO;
+        public ConsultarPedidosUseCase(IOrderDAO orderDAO)
         {
-            _pedidoDAO = pedidoDAO;
+            _orderDAO = orderDAO;
         }
 
-        public PedidosRetorno ConsultarPedidos(CodStatusPedido codStatusPedido)
+        public OrdersResponse ConsultarPedidos(IdOrderStatus idOrderStatus)
         {
-            return _pedidoDAO.ConsultarPedidos(codStatusPedido);
+            return _orderDAO.ConsultarPedidos(idOrderStatus);
         }
 
-        public PedidosRetorno GetOrders()
+        public OrdersResponse GetOrders()
         {
-            return _pedidoDAO.GetOrders();
+            return _orderDAO.GetOrders();
         }
     }
 }

@@ -11,6 +11,7 @@ namespace Pedidos.Mapping
         {
             CreateMap<PedidoIn, PedidoRequest>().ReverseMap();
             CreateMap<ProductRequest, TbProduct>().ReverseMap();
+            CreateMap<ChangeStatusIn, ChangeStatusRequest>().ReverseMap();
 
         }
 

@@ -1,11 +1,11 @@
 ﻿using Pedidos.Domain.Enums;
-using Pedidos.Domain.Retorno;
+using Pedidos.Domain.Response;
 
 namespace Pedidos.UseCase.Orders.Interfaces
 {
     public interface IConsultarPedidosUseCase
     {
-        PedidosRetorno ConsultarPedidos(CodStatusPedido codStatusPedido);
-        PedidosRetorno GetOrders();
+        OrdersResponse ConsultarPedidos(IdOrderStatus idOrderStatus);
+        OrdersResponse GetOrders();
     }
 }

@@ -3,13 +3,13 @@ using System.Text.Json.Serialization;
 
 namespace Pedidos.Domain.Entidades
 {
-    public class Pedido
+    public class Order
     {
         public int CodPedido { get; set; }
         public string Retirada { get; set; }
         public CodTipoIntegracao CodTipoIntegracao { get; set; }
         public string DescTipoIntegracao { get; set; }
-        public CodStatusPedido CodStatusPedido { get; set; }
+        public IdOrderStatus IdOrderStatus { get; set; }
         public string DescStatusPedido { get; set; }    
         public string Rua { get; set; }
         public string Bairro { get; set; }

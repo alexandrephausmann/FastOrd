@@ -34,6 +34,7 @@ namespace Pedidos
             services.AddTransient<IConsultarPedidosUseCase, ConsultarPedidosUseCase>();
             services.AddTransient<IIntegrarProdutoUseCase, IntegrarProdutoUseCase>();
             services.AddTransient<IEnviarMensagemRabbitUseCase, EnviarMensagemRabbitUseCase>();
+            services.AddTransient<IChangeOrderStatusUseCase, ChangeOrderStatusUseCase>();
 
             //Injeção de dependencia de UseCases products
 
@@ -43,7 +44,8 @@ namespace Pedidos
             services.AddTransient<IDeleteProductUseCase, DeleteProductUseCase>();
             
             //Injeção de dependencia de DAO
-            services.AddTransient<IPedidoDAO, PedidoDAO>();
+            services.AddTransient<IOrderDAO, OrderDAO>();
+            services.AddTransient<IOrderStatusDAO, OrderStatusDAO>();
             services.AddTransient<IProductDAO, ProductDAO>();
 
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());

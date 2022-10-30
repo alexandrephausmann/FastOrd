@@ -3,7 +3,7 @@ using Pedidos.Dados.Interface;
 using Pedidos.Domain.Entidades;
 using Pedidos.Domain.EntidadesEF;
 using Pedidos.Domain.Enums;
-using Pedidos.Domain.Retorno;
+using Pedidos.Domain.Response;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -11,10 +11,10 @@ using System.Linq;
 
 namespace Pedidos.Dados
 {
-    public class PedidoDAO : IPedidoDAO
+    public class OrderDAO : IOrderDAO
     {
         public IConfiguration _configuracao { get; }
-        public PedidoDAO(IConfiguration configuracao)
+        public OrderDAO(IConfiguration configuracao)
         {
             _configuracao = configuracao;
         }
@@ -51,23 +51,23 @@ namespace Pedidos.Dados
             return relacaoCodigoExternoFastOrder;
         }
 
-        public PedidosRetorno ConsultarPedidos(CodStatusPedido codStatusPedido)
+        public OrdersResponse ConsultarPedidos(IdOrderStatus idOrderStatus)
         {
-            return GetOrdersByCod((int)codStatusPedido);
+            return GetOrdersByCod((int)idOrderStatus);
         }
 
-        public PedidosRetorno GetOrders()
+        public OrdersResponse GetOrders()
         {
             return GetOrdersByCod(0);
         }
 
-        private PedidosRetorno GetOrdersByCod(int orderStatusCode)
+        private OrdersResponse GetOrdersByCod(int orderStatusCode)
         {
-            var pedidosRetorno = new PedidosRetorno();
+            var ordersResponse = new OrdersResponse();
 
             using (var db = new FastOrderContext(_configuracao))
             {
-                List<Pedido> pedidos = new List<Pedido>();
+                List<Order> pedidos = new List<Order>();
 
                 if(orderStatusCode == 0)
                 {
@@ -80,11 +80,11 @@ namespace Pedidos.Dados
                                    on itPedido.CodProduct equals produto.CodProduct
                                    join integraProduto in db.TbIntegrationType
                                    on pedido.IdIntegrationType equals integraProduto.IdIntegrationType
-                                   select new Pedido
+                                   select new Order
                                    {
                                        CodPedido = pedido.IdOrder,
                                        Retirada = pedido.Withdrawal,
-                                       CodStatusPedido = (CodStatusPedido)stsPedido.IdOrderStatus,
+                                       IdOrderStatus = (IdOrderStatus)stsPedido.IdOrderStatus,
                                        DescStatusPedido = stsPedido.DescOrderStatus,
                                        CodTipoIntegracao = (CodTipoIntegracao)stsPedido.IdOrderStatus,
                                        DescTipoIntegracao = integraProduto.DescIntegrationType,
@@ -108,11 +108,11 @@ namespace Pedidos.Dados
                                    join integraProduto in db.TbIntegrationType
                                    on pedido.IdIntegrationType equals integraProduto.IdIntegrationType
                                    where stsPedido.IdOrderStatus == orderStatusCode
-                                   select new Pedido
+                                   select new Order
                                    {
                                        CodPedido = pedido.IdOrder,
                                        Retirada = pedido.Withdrawal,
-                                       CodStatusPedido = (CodStatusPedido)stsPedido.IdOrderStatus,
+                                       IdOrderStatus = (IdOrderStatus)stsPedido.IdOrderStatus,
                                        DescStatusPedido = stsPedido.DescOrderStatus,
                                        CodTipoIntegracao = (CodTipoIntegracao)stsPedido.IdOrderStatus,
                                        DescTipoIntegracao = integraProduto.DescIntegrationType,
@@ -127,35 +127,47 @@ namespace Pedidos.Dados
                 }
                 
 
-                pedidosRetorno.CodigosPedidos = pedidos.Select(p => p.CodPedido).Distinct().ToList();
+                ordersResponse.IdsOrder = pedidos.Select(p => p.CodPedido).Distinct().ToList();
 
 
-                foreach (int codigoPedido in pedidosRetorno.CodigosPedidos)
+                foreach (int idOrder in ordersResponse.IdsOrder)
                 {
-                    var pedidoItem = new PedidosItens();
-                    var itensPedidos = (from itemPedido in db.TbOrderItem
-                                        join produto in db.TbProduct
-                                        on itemPedido.CodProduct equals produto.CodProduct
-                                        where itemPedido.IdOrder == codigoPedido
-                                        select new ItemPedido
+                    var ordersItem = new OrdersItems();
+                    var itensPedidos = (from orderItem in db.TbOrderItem
+                                        join product in db.TbProduct
+                                        on orderItem.CodProduct equals product.CodProduct
+                                        where orderItem.IdOrder == idOrder
+                                        select new OrderItem
                                         {
-                                            CodItemPedido = itemPedido.IdOrderItem,
-                                            CodPedido = itemPedido.IdOrder,
-                                            Quantidade = (int)itemPedido.Quantity,
-                                            CodProduto = (int)produto.CodProduct,
-                                            DescProduto = produto.DescProduct,
-                                            ProductValue = produto.ProductValue
+                                            CodItemPedido = orderItem.IdOrderItem,
+                                            CodPedido = orderItem.IdOrder,
+                                            Quantidade = (int)orderItem.Quantity,
+                                            CodProduto = (int)product.CodProduct,
+                                            DescProduto = product.DescProduct,
+                                            ProductValue = product.ProductValue
                                         }).ToList();
-                    pedidoItem.ItensPedido.AddRange(itensPedidos);
-                    var totalValue = pedidoItem.ItensPedido.Sum(pedidoItem => pedidoItem.Quantidade * pedidoItem.ProductValue);
-                    pedidoItem.Pedido = pedidos.Find(pedido => pedido.CodPedido == codigoPedido);
-                    pedidoItem.Pedido.TotalValue = Math.Round(totalValue, 2);
-                    pedidosRetorno.PedidosItens.Add(pedidoItem);
+                    ordersItem.OrderItems.AddRange(itensPedidos);
+                    var totalValue = ordersItem.OrderItems.Sum(pedidoItem => pedidoItem.Quantidade * pedidoItem.ProductValue);
+                    ordersItem.Order = pedidos.Find(pedido => pedido.CodPedido == idOrder);
+                    ordersItem.Order.TotalValue = Math.Round(totalValue, 2);
+                    ordersResponse.OrdersItems.Add(ordersItem);
                 }
 
             }
 
-            return pedidosRetorno;
+            return ordersResponse;
+        }
+
+        public void ChangeOrderStatus(int idOrder, IdOrderStatus idOrderStatus)
+        {
+            using (var db = new FastOrderContext(_configuracao))
+            {
+                var order = db.TbOrder.First(order => order.IdOrder == idOrder);
+                order.IdOrderStatus = (int)idOrderStatus;
+                db.TbOrder.Update(order);
+                db.SaveChanges();
+            }
+        
         }
 
 
