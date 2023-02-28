@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { OrderStatus } from 'src/app/enums/order-status';
 
 @Component({
   selector: 'app-kitchen-orders',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./kitchen-orders.component.css']
 })
 export class KitchenOrdersComponent implements OnInit {
+
+  OrderStatus = OrderStatus;
 
   constructor() { }
 

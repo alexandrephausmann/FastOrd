@@ -80,8 +80,8 @@ namespace Pedidos.Controllers
         {
             try
             {
-                OrdersResponse pedidosRetorno = _consultarPedidosUseCase.ConsultarPedidos(codStatusPedido);
-                return Ok(new { pedidosRetorno });
+                OrdersResponse ordersResponse = _consultarPedidosUseCase.ConsultarPedidos(codStatusPedido);
+                return Ok(new { ordersResponse });
             }
             catch (Exception ex)
             {

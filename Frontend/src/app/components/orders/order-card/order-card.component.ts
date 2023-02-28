@@ -39,7 +39,7 @@ export class OrderCardComponent implements OnInit {
       console.log("order status: " + orderStatus);
       this.order.idOrderStatus = newIdStatusOrder;
       this.order.descStatusPedido = orderStatus.descOrderStatus;
-      this.order = [...this.order];
+      this.orderService.updateOrderStatusComponent();
     })
   }
 

@@ -1,5 +1,6 @@
 .card {
         max-width: 400px;
+        width: 350px;
         background-color: lightgray;
 }
 
@@ -17,10 +18,20 @@
 
 .status {
         text-align: left;
+        flex: 2 1;
+}
+
+
+.total {
+        padding: 0px;
+        padding-bottom: 5px;
+        height: 25px;
+        display: flex;
 }
 
 .total-value {
         text-align: right;
+        flex: 1 1;
 }
 
 .bold {
@@ -41,9 +52,19 @@
 
 .action {
         text-align: center;
+        font: 11px sans-serif;
+        font-weight: bold;
         padding-bottom: 45px;
         color: white;
 }
+
+::ng-deep .action>.mat-button-wrapper {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+}
+
 
 button {
         height: 0px;
@@ -52,13 +73,6 @@ button {
 .bottom {
         padding-top: 10px;
 }
-
-.total {
-        padding: 0px;
-        padding-bottom: 5px;
-        height: 25px;
-}
-
 
 .mat-expansion-panel-header-description {
         flex-grow: 1;
@@ -102,7 +116,7 @@ button.progress {
 
 button.ready-for-withdrawal {
 
-        background-color: lightgreen;
+        background-color: green;
 }
 
 button.done {

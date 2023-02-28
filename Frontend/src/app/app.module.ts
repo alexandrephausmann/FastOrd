@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { ExternalOrdersComponent } from './views/external-orders/external-orders.component';
-import { KitchenOrdersComponent } from './views/kitchen-orders/kitchen-orders.component';
 import { OrdersPanelComponent } from './views/orders-panel/orders-panel.component';
 
 import { HttpClientModule } from '@angular/common/http';
@@ -25,7 +24,6 @@ registerLocaleData(localePt);
   declarations: [
     AppComponent,
     ExternalOrdersComponent,
-    KitchenOrdersComponent,
     OrdersPanelComponent
   ],
   imports: [

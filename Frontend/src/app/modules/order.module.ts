@@ -22,6 +22,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { OrderCardComponent } from '../components/orders/order-card/order-card.component';
 import { MatSelectModule } from '@angular/material/select';
 import { OrderProductContainerComponent } from '../components/orders/order-product-container/order-product-container.component';
+import { KitchenOrdersComponent } from '../views/kitchen-orders/kitchen-orders.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { OrderProductContainerComponent } from '../components/orders/order-produ
     OrderReadComponent,
     OrdersComponent,
     OrderCardComponent,
-    OrderProductContainerComponent
+    OrderProductContainerComponent,
+    KitchenOrdersComponent
   ],
   imports: [
     CommonModule,

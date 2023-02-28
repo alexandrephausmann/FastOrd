@@ -1,8 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { EMPTY, map, catchError } from 'rxjs';
+import { EMPTY, map, catchError, Subject } from 'rxjs';
 import { Observable } from 'rxjs/internal/Observable';
+import { OrderStatus } from 'src/app/enums/order-status';
 import { ChangeStatusOrderRequest } from './ChangeStatusOrderRequest.model';
 import { ProductOrderRequest } from './productOrderRequest.model';
 
@@ -12,6 +13,8 @@ import { ProductOrderRequest } from './productOrderRequest.model';
 export class OrderService {
 
   baseUrl = "http://localhost:5000/order";
+
+  statusChange$ = new Subject<boolean>();
 
   constructor(private snackbar: MatSnackBar, private http: HttpClient) { }
 
@@ -30,8 +33,26 @@ export class OrderService {
     return EMPTY
   }
 
-  read(): Observable<any> {
+  getOrders(id: OrderStatus): Observable<any> {
+    if (id == OrderStatus.All) {
+      this.getAllOrders();
+      return this.getAllOrders();
+    }
+    else {
+      return this.getOrderByID(id);
+    }
+  }
+
+  getAllOrders(): Observable<any> {
     return this.http.get<any>(this.baseUrl).pipe(
+      map((obj) => obj),
+      catchError((e) => this.errorHandler(e))
+    )
+  }
+
+  getOrderByID(id: OrderStatus): Observable<any> {
+    var url = `${this.baseUrl}/${id}`
+    return this.http.get<any>(url).pipe(
       map((obj) => obj),
       catchError((e) => this.errorHandler(e))
     )
@@ -50,6 +71,14 @@ export class OrderService {
       map((obj) => obj),
       catchError((e) => this.errorHandler(e))
     )
+  }
+
+  updateOrderStatusComponent() {
+    this.statusChange$.next(true);
+  }
+
+  getOrderStatusChange() {
+    return this.statusChange$.asObservable();
   }
 
 }
